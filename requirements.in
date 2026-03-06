@@ -1,0 +1,54 @@
+# This file is used to manage Python dependencies via pip.
+#
+# The current design choice is to only pin when necessary. Otherwise, allow updating to the latest version.
+# The tradeoff here is we risk breaking changes if/when a dependency version updates, but the benefit is we
+# stay at the forefront of new features and bug fixes.
+#
+# Add new direct (not transitive!) dependencies below (pin versions as needed).
+# Run the command `dazel run //:requirements.update` to update the requirements.txt file.
+# Run the command `dazel test //:requirements.test` to test the requirements.txt file is up-to-date.
+aioboto3
+aiofiles
+aiohttp
+boto3
+botocore
+certifi
+decord>=0.6.0
+einops
+fastapi
+httpx
+hydra-core
+lcov_cobertura
+matplotlib
+minio
+moderngl
+mpire
+multi-storage-client
+multi-storage-client[boto3]
+mypy
+numba>=0.57.0
+numpy
+omegaconf>=2.3.0
+onnxruntime-gpu
+openai>=1.40.0
+opencv-python-headless
+pydantic
+pydantic-settings
+pymap3d
+pyproj
+pytest
+pytest-asyncio
+python-dotenv
+python-pycg
+pyyaml
+ray
+scipy
+shapely
+termcolor
+testcontainers
+torch==2.9.0
+torchvision
+tqdm
+trimesh
+uvicorn
+webdataset

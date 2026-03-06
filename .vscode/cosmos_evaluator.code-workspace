@@ -1,0 +1,90 @@
+{
+    "folders": [
+        {
+            "path": ".."
+        }
+    ],
+    "extensions": {
+        "recommendations": [
+            "augustocdias.tasks-shell-input", /// Task input shell command support
+            "cschlosser.doxdocgen", // Doxygen documentation generator
+            "eamodio.gitlens", // Git integration
+            "jebbs.plantuml", // PlantUML integration
+            "lextudio.restructuredtext", // reStructuredText language support
+            "llvm-vs-code-extensions.vscode-clangd", // Clangd for code completion/navigation
+            "ms-python.black-formatter", // Python code formatter
+            "ms-python.isort", // Python import sorter
+            "ms-python.python", // Python language support
+            "ms-python.vscode-pylance", // Python language server
+            "ms-vscode-remote.remote-ssh-edit", // SSH editing
+            "ms-vscode-remote.remote-ssh", // Remote SSH development
+            "ms-vscode.remote-explorer", // Remote development file explorer
+            "NVIDIA.bluebazel", // Bazel build system support
+            "redhat.vscode-yaml", // YAML language support
+            "zxh404.vscode-proto3" // Protocol Buffers language support
+        ],
+        "unwantedRecommendations": [
+            "ms-vscode.cpptools", // CONFLICTS WITH Clangd! Install at your own risk!
+        ]
+    },
+    "settings": {
+        "C_Cpp.intelliSenseEngine": "disabled",
+        "clangd.arguments": [
+            "--background-index",
+            "--background-index-priority=background",
+            "--clang-tidy",
+            "--completion-style=detailed",
+            "--function-arg-placeholders",
+            "--header-insertion=never",
+            "--log=error",
+            "--malloc-trim",
+            "--pch-storage=memory",
+            // User needs to have one of the below compiler toolchains installed locally on their
+            // VSCode host for this to work.
+            "--query-driver=/usr/bin/g++-9,/usr/bin/g++*,external/**/bin/*g++*,/**/external/**/bin/*g++*,external/**/bin/q++,/**/external/**/bin/q++"
+        ],
+        "clangd.checkUpdates": true,
+        "clangd.detectExtensionConflicts": true,
+        "clangd.restartAfterCrash": false,
+        "files.associations": {
+            "*.h": "c",
+            "BUILD.*": "starlark",
+        },
+        "files.exclude": {
+            "**/.cache/**": true,
+            "bazel-*/**": true,
+        },
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.trimTrailingWhitespace": true,
+        "files.watcherExclude": {
+            "**/.cache/**": true,
+            "**/.git/**": true,
+            "**/.vscode/**": true,
+            "bazel-*/**": true,
+        },
+        "search.exclude": {
+            "**/external/**": true,
+        },
+        "search.followSymlinks": false,
+        // Keep both "python.analysis.exclude" and "cursorpyright.analysis.exclude" in sync (VSCode doesn't support merging them or using variables in the settings)
+        "python.analysis.exclude": [ // https://github.com/microsoft/pylance-release/wiki/Opening-Large-Workspaces-in-VS-Code#manually-configure-your-workspace
+            "**/node_modules",
+            "**/__pycache__",
+            ".git",
+            "bazel-*",
+            "external",
+            "staging",
+        ],
+        "cursorpyright.analysis.exclude": [ // https://github.com/microsoft/pylance-release/issues/6357#issuecomment-2914780828
+            "**/node_modules",
+            "**/__pycache__",
+            ".git",
+            "bazel-*",
+            "external",
+            "staging",
+        ],
+        "bazel.buildifierFixOnFormat": true,
+        "bazel.queriesShareServer": false
+    },
+}

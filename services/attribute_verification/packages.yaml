@@ -1,0 +1,26 @@
+# System packages for the Attribute Verification service container image.
+#
+# These packages are resolved at build time by rules_distroless and baked into
+# the OCI image as a tar layer, eliminating the need for apt-get at container
+# startup.
+#
+# Anytime this file is changed, the lockfile needs to be regenerated:
+#
+#   dazel run @attribute_verification_packages//:lock
+#
+version: 1
+
+sources:
+  - channel: trixie main
+    url: https://deb.debian.org/debian
+  - channel: trixie-updates main
+    url: https://deb.debian.org/debian
+  - channel: trixie-security main
+    url: https://security.debian.org/debian-security
+
+archs:
+  - amd64
+
+packages:
+  - libgl1
+  - libglib2.0-0

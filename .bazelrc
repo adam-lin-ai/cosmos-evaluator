@@ -1,0 +1,20 @@
+### Common Configuration ###
+common --repo_env=ASPECT_TOOLS_TELEMETRY=-all  # Disables telemetry collection from aspect_build rules
+
+common --experimental_disk_cache_gc_idle_delay=0s  # Disable idle delay for the CI disk cache (override in user.bazelrc file if desired)
+common --experimental_disk_cache_gc_max_size=100G  # CI specific setting (override in user.bazelrc file if desired)
+common --experimental_merged_skyframe_analysis_execution=false  # Disable merged skyframe analysis execution (see https://github.com/bazelbuild/bazel/issues/23743)
+
+# Flags prefixed with "incompatible" will eventually become the default behavior in future Bazel versions
+# They are available to opt-in for incremental migration
+common --incompatible_default_to_explicit_init_py=true  # Requires explicit creation of __init__.py files for packages
+common --incompatible_strict_action_env=true  # Improves hermeticity by preventing actions from accessing the host environment
+
+
+### Build Configuration ###
+build --disk_cache=~/.cache/dazel/cosmos_evaluator/disk-cache  # Disk cache
+build --workspace_status_command=build/workspace_status.sh  # Workspace status configuration for stamping
+
+
+### User Configuration ### (always keep this last!)
+try-import %workspace%/user.bazelrc

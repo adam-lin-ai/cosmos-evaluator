@@ -1,0 +1,132 @@
+load("@pypi//:requirements.bzl", "requirement")
+load("@rules_python//python:defs.bzl", "py_library")
+
+py_library(
+    name = "camera_base",
+    srcs = ["third_party/cosmos_drive_dreams_toolkits/utils/camera/base.py"],
+    imports = ["third_party/cosmos_drive_dreams_toolkits"],
+    visibility = ["@cosmos_evaluator//checks/utils:__pkg__"],
+    deps = [
+        ":pcd_utils",
+        requirement("numpy"),
+        requirement("opencv-python-headless"),
+        requirement("shapely"),
+        requirement("torch"),
+    ],
+)
+
+py_library(
+    name = "camera_ftheta",
+    srcs = ["third_party/cosmos_drive_dreams_toolkits/utils/camera/ftheta.py"],
+    imports = ["third_party/cosmos_drive_dreams_toolkits"],
+    visibility = ["@cosmos_evaluator//checks/utils:__pkg__"],
+    deps = [
+        ":camera_base",
+        requirement("numpy"),
+        requirement("scipy"),
+        requirement("torch"),
+    ],
+)
+
+filegroup(
+    name = "config",
+    srcs = [
+        "third_party/cosmos_drive_dreams_toolkits/config/world_scenario_color_config.json",
+        "third_party/cosmos_drive_dreams_toolkits/config/world_scenario_laneline_config.json",
+    ],
+    visibility = ["@cosmos_evaluator//checks/utils/models/cwip/visualization:__pkg__"],
+)
+
+py_library(
+    name = "graphics_utils",
+    srcs = ["third_party/cosmos_drive_dreams_toolkits/utils/graphics_utils.py"],
+    imports = ["third_party/cosmos_drive_dreams_toolkits"],
+    deps = [
+        ":shader_utils",
+        requirement("moderngl"),
+        requirement("numpy"),
+        requirement("ray"),
+    ],
+)
+
+py_library(
+    name = "minimap_utils",
+    srcs = ["third_party/cosmos_drive_dreams_toolkits/utils/minimap_utils.py"],
+    data = ["@cosmos_drive_dreams_toolkits//:config"],
+    imports = ["third_party/cosmos_drive_dreams_toolkits"],
+    deps = [
+        ":graphics_utils",
+        ":pcd_utils",
+        ":wds_utils",
+        requirement("scipy"),
+        requirement("termcolor"),
+    ],
+)
+
+py_library(
+    name = "pcd_utils",
+    srcs = ["third_party/cosmos_drive_dreams_toolkits/utils/pcd_utils.py"],
+    imports = ["third_party/cosmos_drive_dreams_toolkits"],
+    deps = [
+        requirement("einops"),
+        requirement("numpy"),
+        requirement("scipy"),
+        requirement("shapely"),
+        requirement("torch"),
+        requirement("trimesh"),
+    ],
+)
+
+py_library(
+    name = "render_from_rds_hq",
+    srcs = glob([
+        "third_party/cosmos_drive_dreams_toolkits/render_from_rds_hq.py",
+        "third_party/cosmos_drive_dreams_toolkits/utils/**/*.py",
+    ]),
+    data = glob(
+        ["third_party/cosmos_drive_dreams_toolkits/config/**"],
+        allow_empty = True,
+    ),
+    imports = ["third_party/cosmos_drive_dreams_toolkits"],
+    visibility = ["@cosmos_evaluator//checks/utils/world_model:__pkg__"],
+    deps = [
+        requirement("boto3"),
+        requirement("decord"),
+        requirement("einops"),
+        requirement("hydra-core"),
+        requirement("minio"),
+        requirement("moderngl"),
+        requirement("mpire"),
+        requirement("numpy"),
+        requirement("omegaconf"),
+        requirement("opencv-python-headless"),
+        requirement("pymap3d"),
+        requirement("pyproj"),
+        requirement("python-pycg"),
+        requirement("ray"),
+        requirement("scipy"),
+        requirement("shapely"),
+        requirement("termcolor"),
+        requirement("torch"),
+        requirement("tqdm"),
+        requirement("trimesh"),
+        requirement("webdataset"),
+    ],
+)
+
+py_library(
+    name = "shader_utils",
+    srcs = ["third_party/cosmos_drive_dreams_toolkits/utils/shader_utils.py"],
+    imports = ["third_party/cosmos_drive_dreams_toolkits"],
+)
+
+py_library(
+    name = "wds_utils",
+    srcs = ["third_party/cosmos_drive_dreams_toolkits/utils/wds_utils.py"],
+    imports = ["third_party/cosmos_drive_dreams_toolkits"],
+    deps = [
+        requirement("numpy"),
+        requirement("termcolor"),
+        requirement("webdataset"),
+    ],
+)

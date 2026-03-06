@@ -1,0 +1,20 @@
+# VSCode Configuration files
+.vscode/*
+!.vscode/cosmos_evaluator.code-workspace
+
+# Bazel artifacts
+/bazel-*
+/user.bazelrc
+
+# Dazel artifacts
+/.dazel_run
+/user.dazelrc
+
+# Claude Code notes
+.claude/notes/*
+
+# Environment variable secrets
+.env
+
+# ONNX model files (download manually as needed)
+*.onnx

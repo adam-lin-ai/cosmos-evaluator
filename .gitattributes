@@ -1,0 +1,12 @@
+checks/sample_data/0d21d408-ceca-4af6-9c4b-4f6f78ee7459_1727936028200000_0.mp4 filter=lfs diff=lfs merge=lfs -text
+checks/sample_data/0d21d408-ceca-4af6-9c4b-4f6f78ee7459_1727936028200000_rgb.mp4 filter=lfs diff=lfs merge=lfs -text
+checks/sample_data/camera_front_wide_120fov.mp4 filter=lfs diff=lfs merge=lfs -text
+checks/sample_data/rds_hq.zip filter=lfs diff=lfs merge=lfs -text
+checks/sample_data/augmented.mp4 filter=lfs diff=lfs merge=lfs -text
+checks/sample_data/original.mp4 filter=lfs diff=lfs merge=lfs -text
+checks/sample_data/object_detection/object_detection_00000.json filter=lfs diff=lfs merge=lfs -text
+checks/sample_data/object_detection/object_detection_00001.json filter=lfs diff=lfs merge=lfs -text
+checks/sample_data/object_detection/object_detection_00002.json filter=lfs diff=lfs merge=lfs -text
+checks/sample_data/cosmos_public/rds_hq.zip filter=lfs diff=lfs merge=lfs -text
+third_party/ffmpeg/ffmpeg-*-lgpl-*.tar.gz filter=lfs diff=lfs merge=lfs -text
+oss-source-code.tar.gz filter=lfs diff=lfs merge=lfs -text

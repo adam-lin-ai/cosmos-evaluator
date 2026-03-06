@@ -1,0 +1,26 @@
+# System packages for the VLM service container image.
+#
+# These packages are resolved at build time by rules_distroless and baked into
+# the OCI image as a tar layer, eliminating the need for apt-get at container
+# startup.
+#
+# Anytime this file is changed, the lockfile needs to be regenerated:
+#
+#   dazel run @vlm_packages//:lock
+#
+version: 1
+
+sources:
+  - channel: jammy main universe
+    url: https://archive.ubuntu.com/ubuntu
+  - channel: jammy-updates main universe
+    url: https://archive.ubuntu.com/ubuntu
+  - channel: jammy-security main universe
+    url: https://archive.ubuntu.com/ubuntu
+
+archs:
+  - "amd64"
+
+packages:
+  - "gnupg2"  # Override base image version (2.2.27-3ubuntu2.4) with jammy-security patch (2.2.27-3ubuntu2.5)
+  - "libxcb1"

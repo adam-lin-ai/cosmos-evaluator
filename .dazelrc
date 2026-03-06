@@ -1,0 +1,261 @@
+import ast
+from datetime import datetime
+import getpass
+import os
+import re
+import subprocess
+
+# Git commit hash
+git_commit_sha = (
+    subprocess.check_output(["git", "rev-parse", "HEAD"])
+    .decode("utf-8")
+    .strip()
+)
+
+# Get git top so that we can run from anywhere by using absolute paths
+git_top = (
+    subprocess.check_output(["git", "rev-parse", "--show-toplevel"])
+    .decode("utf-8")
+    .strip()
+)
+
+DISPLAY = os.environ.get("DISPLAY", ":0")
+GITLAB_TOKEN = os.environ.get("GITLAB_TOKEN", "")
+HOME = os.environ.get("HOME", os.path.expanduser("~"))
+USER = os.environ.get("USER", getpass.getuser())
+
+# The name of the docker container to run.
+# Append CI_CONCURRENT_ID to avoid container name conflicts when running parallel CI jobs
+CI_CONCURRENT_ID = os.environ.get("CI_CONCURRENT_ID", "")
+DAZEL_INSTANCE_NAME = f"cosmos_evaluator-{CI_CONCURRENT_ID}" if CI_CONCURRENT_ID else "cosmos_evaluator"
+
+# The name of the dazel image to build or pull.
+DAZEL_IMAGE_NAME = "build"  # No tag specified because the latest tag is pulled by default
+
+# The command to run when running the image (the continuous command that will
+# hold the container active while we connect to it).
+DAZEL_RUN_COMMAND = "/bin/bash"
+
+# The command to run to invoke docker (can be changed to `nvidia-docker` for GPUs).
+DAZEL_DOCKER_COMMAND = "docker"
+
+# The repository to pull the dazel image from.
+DAZEL_REPOSITORY = "dazel"
+
+# The directory to build the dazel image in.
+DAZEL_DIRECTORY = os.path.join(git_top, "build/dazel")
+
+# The path to the Dockerfile to use to build the dazel image.
+DAZEL_DOCKERFILE = os.path.join(DAZEL_DIRECTORY, "Dockerfile")
+
+# The command to run inside the container.
+# NOTE: You should add flags to the .bazelrc file instead of here, since it is
+#       also shared in the volume and it is a much cleaner way.
+DAZEL_COMMAND = "bazel"
+
+# Add any additional volumes you want to share between the host and the docker
+# container, in the normal "hostdir:dockerdir" format.
+# This can be a python iterable, or a comma-separated string.
+# If working on windows add drive name to avoid conflicts, e.g.
+# DAZEL_VOLUMES = ["C:\\tmp:/C/tmp"]
+# NOTE: Create any directories that don't exist in the host machine to ensure they have the correct
+# user permissions in the build container
+DAZEL_VOLUMES = []
+
+# Use separate directory for cosmos_evaluator caches to avoid conflicts with other projects
+# Append CI_CONCURRENT_ID to avoid conflicts when running parallel CI jobs
+_cache_suffix = f"_{CI_CONCURRENT_ID}" if CI_CONCURRENT_ID else ""
+DAZEL_BAZEL_USER_OUTPUT_ROOT = os.path.join(HOME, f".cache/dazel/cosmos_evaluator/_dazel_{USER}{_cache_suffix}")
+if not os.path.exists(DAZEL_BAZEL_USER_OUTPUT_ROOT):
+    os.makedirs(DAZEL_BAZEL_USER_OUTPUT_ROOT)
+# Mount the whole dazel cache folder to allow things like `dazel clean --expunge_async`
+# Otherwise only the specific cache folder for the user will be mounted and the parent dir will
+# be owned by root, which will prevent the folder movement required
+DAZEL_VOLUMES.append(f"{DAZEL_BAZEL_USER_OUTPUT_ROOT}:{DAZEL_BAZEL_USER_OUTPUT_ROOT}")
+
+DAZEL_BAZEL_DISK_CACHE_ROOT = os.path.join(HOME, ".cache/dazel/cosmos_evaluator/disk-cache")
+if not os.path.exists(DAZEL_BAZEL_DISK_CACHE_ROOT):
+    os.makedirs(DAZEL_BAZEL_DISK_CACHE_ROOT)
+# Mount the shared disk cache directory
+DAZEL_VOLUMES.append(f"{DAZEL_BAZEL_DISK_CACHE_ROOT}:{DAZEL_BAZEL_DISK_CACHE_ROOT}")
+
+# Add authentication credentials to DAZEL_VOLUMES if they exist
+docker_dir = os.path.join(HOME, ".docker") # Docker registry auth credentials
+if os.path.exists(docker_dir):
+    DAZEL_VOLUMES.append(f"{docker_dir}:{docker_dir}")
+
+ssh_dir = os.path.join(HOME, ".ssh") # SSH keys
+if os.path.exists(ssh_dir):
+    DAZEL_VOLUMES.append(f"{ssh_dir}:{ssh_dir}")
+
+netrc_path = os.path.join(HOME, ".netrc") # Network remote login credentials
+if os.path.exists(netrc_path):
+    DAZEL_VOLUMES.append(f"{netrc_path}:{netrc_path}")
+
+ngc_dir = os.path.join(HOME, ".ngc") # NVIDIA GPU Cloud credentials
+if os.path.exists(ngc_dir):
+    DAZEL_VOLUMES.append(f"{ngc_dir}:{ngc_dir}")
+
+cosmos_evaluator_dir = os.path.join(HOME, ".cosmos_evaluator") # Cosmos Evaluator API credentials
+if os.path.exists(cosmos_evaluator_dir):
+    DAZEL_VOLUMES.append(f"{cosmos_evaluator_dir}:{cosmos_evaluator_dir}")
+
+aws_dir = os.path.join(HOME, ".aws") # AWS credentials
+if os.path.exists(aws_dir):
+    DAZEL_VOLUMES.append(f"{aws_dir}:{aws_dir}")
+
+tsh_dir = os.path.join(HOME, ".tsh") # Teleport session credentials
+if os.path.exists(tsh_dir):
+    DAZEL_VOLUMES.append(f"{tsh_dir}:{tsh_dir}")
+
+# Mount the X11 unix socket if it exists
+if os.path.exists("/tmp/.X11-unix"):
+    DAZEL_VOLUMES.append("/tmp/.X11-unix:/tmp/.X11-unix")
+
+# Docker socket for loading images
+if os.path.exists("/var/run/docker.sock"):
+    DAZEL_VOLUMES.append("/var/run/docker.sock:/var/run/docker.sock")
+
+# Add any ports you want to publish from the dazel container to the host, in the
+# normal "interface:dockerport:hostport" (e.g. "0.0.0.0:80:80").
+# This can be useful if you use the "dazel run //my/cool/webserver/target"
+# command for example, and need to publish port 80.
+# Expose ports for running all the REST APIs of the microservices locally
+# Port assignments are defined in services/local_ports.bzl (single source of truth)
+_local_ports_bzl = os.path.join(git_top, "services", "local_ports.bzl")
+try:
+    with open(_local_ports_bzl) as _f:
+        _bzl_content = _f.read()
+    _match = re.search(r"LOCAL_PORTS\s*=\s*(\{[^}]+\})", _bzl_content)
+    if not _match:
+        raise ValueError(f"LOCAL_PORTS dict not found in {_local_ports_bzl}")
+    _local_ports = ast.literal_eval(_match.group(1))
+    if not isinstance(_local_ports, dict):
+        raise TypeError(f"LOCAL_PORTS must be a dict, got {type(_local_ports).__name__}")
+    DAZEL_PORTS = [f"0.0.0.0:{port}:{port}" for port in _local_ports.values()]
+except (OSError, ValueError, TypeError, SyntaxError) as _e:
+    raise SystemExit(f"Failed to load port config from {_local_ports_bzl}: {_e}") from _e
+
+# Add any environment variables you want to set in the dazel container
+# They will be set via -e in the docker run command
+# This can be a python iterable, or a comma-separated string.
+DAZEL_ENV_VARS = [
+    f"DISPLAY={DISPLAY}",
+    f"GITLAB_TOKEN={GITLAB_TOKEN}",
+    "NVIDIA_DRIVER_CAPABILITIES=all",
+    "NVIDIA_VISIBLE_DEVICES=all",
+]
+
+# Load env vars from ~/.cosmos_evaluator/.env as defaults; user can specify host shell env vars to override
+_cosmos_evaluator_env_file = os.path.join(cosmos_evaluator_dir, ".env")
+if os.path.exists(_cosmos_evaluator_env_file):
+    with open(_cosmos_evaluator_env_file) as _f:
+        for _line in _f:
+            _line = _line.strip()
+            if _line and not _line.startswith("#") and "=" in _line:
+                _key, _val = _line.split("=", 1)
+                _comment_idx = _val.find(" #")
+                if _comment_idx != -1:
+                    _val = _val[:_comment_idx].rstrip()
+                _host_val = os.environ.get(_key)
+                DAZEL_ENV_VARS.append(f"{_key}={_host_val}" if _host_val else f"{_key}={_val}")
+
+# The GPUs to expose to the Docker container, "all" for every installed GPU
+DAZEL_GPUS = "all"  # Specifying will automatically invoke the nvidia-container-toolkit runtime
+
+# The name of the network on which to load all run dependencies and dazel container.
+# If you are using a docker-compose.yml file to load the environment, this must
+# be the network name to which all of the necessary dependencies are connected.
+DAZEL_NETWORK = "host"  # Use host network to access SSH tunnel on localhost
+
+# Add any additional images that you want to run as dependencies and hook up to
+# the same docker network as the main container.
+# The format is the standard "repository/image:tag", but you can optionally add
+# the name of the container to create with "repository/image:tag::container".
+# This is useful if you want to add "postgres" or "rabbitmq" for instance, and
+# have them run as part of your test environment in a seamless reproducible way.
+# This can be a python iterable, or a comma-separated string.
+# Note: alternatively, you can use a docker-compose.yml file for dependencies.
+DAZEL_RUN_DEPS = []
+
+# Add a docker-compose.yml file here to use it to load any services you want to
+# launch as part of the environment for running bazel.
+# This can be a much more complex environment than what is possible using run
+# dependencies.
+# Note: you can control both the project name and which services to run with the
+# variables below.
+DAZEL_DOCKER_COMPOSE_FILE = ""
+
+# The command to run to invoke docker-compose (can be changed to
+# `nvidia-docker-compose` for GPUs).
+DAZEL_DOCKER_COMPOSE_COMMAND = "docker-compose"
+
+# If using a docker-compose.yml file, this will set the COMPOSE_PROJECT_NAME
+# environment variable and thus the project name.
+DAZEL_DOCKER_COMPOSE_PROJECT_NAME = "dazel"
+
+# If using a docker-compose.yml file, you can specify the services to run in the
+# file (and empty string means all services - as in running: docker-compose up).
+# This can be a python iterable, or a comma-separated string.
+DAZEL_DOCKER_COMPOSE_SERVICES = ""
+
+# Whether or not to run in privileged mode (fixes bazel sandboxing issues on some
+# systems). Note that this can be a python boolean equivalent, so if setting
+# this from the environment, simply set it to an empty string.
+DAZEL_DOCKER_RUN_PRIVILEGED = False
+
+# Path to custom .bazelrc file to use when running the bazel commands.
+DAZEL_BAZEL_RC_FILE = ".bazelrc"
+
+# Use the :delegated flag of the --volume option of docker for the bind-mounting of
+# the bazel cache directory. This vastly improves throughput on MacOSX.
+# More information on the :delegated flag: https://docs.docker.com/docker-for-mac/osxfs-caching/.
+# NOTE: This will fail on Docker versions < 17.04.
+DAZEL_DELEGATED_VOLUME = False
+
+# The user, in the same format as the --user option docker run and docker exec takes,
+# to use when starting the container and executing commands inside of the container
+DAZEL_USER = USER
+
+# Specify the reference run file, which describes which container is running and since when.
+DAZEL_RUN_FILE = os.path.join(git_top, ".dazel_run")
+
+# Get all the groups that the user is currently a part of to add to the docker
+groups = (
+    subprocess.run("id -G | xargs getent group", shell=True, stdout=subprocess.PIPE)
+    .stdout
+    .decode("utf-8")
+    .strip()
+    .split("\n")
+)
+
+# xargs getent group may return an empty string if the user is in a group not present in /etc/group;
+# the subsequent split(":") would then yield [''] which is not a valid group
+# Guard against this by skipping all groups that are empty strings
+groups = [g.split(":") for g in groups]
+groups = [g for g in groups if len(g) > 2]
+
+# Groups with spaces in them are valid in some contexts, but cannot be recreated (using `groupadd`
+# in docker/Dockerfile). Skip all groups with spaces in them here.
+groups = [":".join([g[0], g[2]]) for g in groups if " " not in g[0]]
+groups = " ".join(groups)
+
+# Build arguments for the dazel image that get passed directly to the docker build command
+DAZEL_DOCKER_BUILD_ARGS = " ".join([
+    f"--build-arg user_id={os.getuid()}",
+    f"--build-arg user_name={USER}",
+    f"--build-arg home={HOME}",
+    f"--build-arg groups='{groups}'",
+    f"--build-context ffmpeg={os.path.join(git_top, 'third_party/ffmpeg')}",
+    f"--secret id=netrc,src={netrc_path}",
+    f"--label 'build_date={datetime.now().strftime('%Y-%m-%d')}'",
+    f"--label 'git_commit_sha={git_commit_sha}'",
+])
+
+# Watch all files used for building the dazel image. Force image rebuild in case they change
+DAZEL_FILES_WATCH = [
+    os.path.join(git_top, "build/dazel/Dockerfile"),
+    os.path.join(git_top, ".dazelrc"),
+    os.path.join(git_top, "user.dazelrc"),
+    os.path.join(git_top, "third_party/ffmpeg/ffmpeg-8.0.1-lgpl-nvenc-openh264-linux-amd64.tar.gz"),
+]

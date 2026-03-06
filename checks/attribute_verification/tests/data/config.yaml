@@ -1,0 +1,16 @@
+metropolis.attribute_verification:
+  enabled: true
+  selected_variables:
+    weather: cloudy
+    time_of_day: morning
+  variable_options:
+    weather:
+      - sunny
+      - cloudy
+      - rainy
+      - snowy
+    time_of_day:
+      - morning
+      - afternoon
+      - evening
+      - night

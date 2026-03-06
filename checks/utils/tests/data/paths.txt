@@ -1,0 +1,2 @@
+s3://bucket1/key1
+s3://bucket2/key2

@@ -1,0 +1,27 @@
+[tool.mypy]
+disallow_incomplete_defs = true
+disallow_untyped_defs = true
+exclude_gitignore = true
+explicit_package_bases = true
+follow_imports = "silent"
+follow_imports_for_stubs = true
+ignore_missing_imports = true
+namespace_packages = true
+plugins = ["pydantic.mypy"]
+python_version = "3.13"
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+
+[tool.ruff.lint]
+extend-select = ["I"]
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+known-first-party = ["build", "checks", "services", "utils"]
+known-third-party = ["third_party"]

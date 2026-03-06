@@ -1,0 +1,8 @@
+metropolis.hallucination:
+  enabled: true
+  blur_ksize: 7
+  dist_tol_px: 7.0
+  grad_thresh: 10.0
+  morph_k: 3
+  moving_window_size: 33
+  # max_frames: 1000
