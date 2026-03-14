@@ -87,7 +87,7 @@ The checker produces:
 * A console summary with the score, threshold, pass/fail result, frame count, and pixel totals.
 * A JSON results file named `{clip_id}.hallucination.results.json` under `--output-dir` with the above information.
 
-The JSON results will look like this
+The JSON results will look like this (score calculated as `total_hallucinated/total_augmented`):
 
 ```json
 {
