@@ -1,0 +1,542 @@
+{
+  "processed_frames": 29,
+  "total_video_frames": 29,
+  "track_ids": [1001,1002,1003,1004,1005,1006,1007,1008,1009,10010,10011,10012,10013,10014,10015,10016,10017,10018,10019,10020,10021,10022,10023,10024,10025,10026,10027,10028,10029,10030,10031,10032,10033,10034,10035,10036,10037,10038,10039,10040],
+  "processed_frame_ids": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],
+  "hallucination_detections": {
+    "bicycle": [],
+    "motorcycle": [],
+    "pedestrian": [
+      {
+        "frame_idx": 15,
+        "bbox_xywh": [71,295,72,80],
+        "mask_ratio": 0.6796875
+      },
+      {
+        "frame_idx": 17,
+        "bbox_xywh": [151,306,65,66],
+        "mask_ratio": 0.6706293706293707
+      },
+      {
+        "frame_idx": 21,
+        "bbox_xywh": [286,316,46,62],
+        "mask_ratio": 0.5038569424964937
+      },
+      {
+        "frame_idx": 23,
+        "bbox_xywh": [343,311,59,88],
+        "mask_ratio": 0.676617873651772
+      },
+      {
+        "frame_idx": 24,
+        "bbox_xywh": [364,305,63,78],
+        "mask_ratio": 0.653032153032153
+      },
+      {
+        "frame_idx": 25,
+        "bbox_xywh": [395,318,47,57],
+        "mask_ratio": 0.5278088839119074
+      },
+      {
+        "frame_idx": 26,
+        "bbox_xywh": [407,333,60,62],
+        "mask_ratio": 0.6690860215053763
+      },
+      {
+        "frame_idx": 27,
+        "bbox_xywh": [435,335,51,58],
+        "mask_ratio": 0.691683569979716
+      },
+      {
+        "frame_idx": 28,
+        "bbox_xywh": [455,340,41,50],
+        "mask_ratio": 0.5282926829268293
+      }
+    ],
+    "vehicle": [
+      {
+        "frame_idx": 0,
+        "bbox_xywh": [648,292,453,175],
+        "mask_ratio": 0.6091706086408073
+      },
+      {
+        "frame_idx": 0,
+        "bbox_xywh": [499,314,111,124],
+        "mask_ratio": 0.7022667829119442
+      },
+      {
+        "frame_idx": 1,
+        "bbox_xywh": [694,299,438,168],
+        "mask_ratio": 0.5713334420526202
+      },
+      {
+        "frame_idx": 1,
+        "bbox_xywh": [519,316,144,128],
+        "mask_ratio": 0.7172309027777778
+      },
+      {
+        "frame_idx": 2,
+        "bbox_xywh": [733,305,400,162],
+        "mask_ratio": 0.5644907407407408
+      },
+      {
+        "frame_idx": 2,
+        "bbox_xywh": [543,306,161,142],
+        "mask_ratio": 0.7103490508266993
+      },
+      {
+        "frame_idx": 3,
+        "bbox_xywh": [767,310,367,155],
+        "mask_ratio": 0.5681814186516656
+      },
+      {
+        "frame_idx": 3,
+        "bbox_xywh": [562,304,178,142],
+        "mask_ratio": 0.7384871023896186
+      },
+      {
+        "frame_idx": 4,
+        "bbox_xywh": [793,314,343,151],
+        "mask_ratio": 0.5573146950360087
+      },
+      {
+        "frame_idx": 4,
+        "bbox_xywh": [581,306,189,140],
+        "mask_ratio": 0.7334467120181406
+      },
+      {
+        "frame_idx": 5,
+        "bbox_xywh": [816,321,320,142],
+        "mask_ratio": 0.5678257042253522
+      },
+      {
+        "frame_idx": 5,
+        "bbox_xywh": [595,309,200,138],
+        "mask_ratio": 0.7551811594202898
+      },
+      {
+        "frame_idx": 6,
+        "bbox_xywh": [839,330,298,132],
+        "mask_ratio": 0.5647752694732561
+      },
+      {
+        "frame_idx": 6,
+        "bbox_xywh": [611,311,209,136],
+        "mask_ratio": 0.7540458767238953
+      },
+      {
+        "frame_idx": 7,
+        "bbox_xywh": [628,314,209,132],
+        "mask_ratio": 0.7648252863563868
+      },
+      {
+        "frame_idx": 7,
+        "bbox_xywh": [858,332,281,129],
+        "mask_ratio": 0.5656431901569698
+      },
+      {
+        "frame_idx": 8,
+        "bbox_xywh": [650,318,203,130],
+        "mask_ratio": 0.7763925729442971
+      },
+      {
+        "frame_idx": 8,
+        "bbox_xywh": [874,342,267,119],
+        "mask_ratio": 0.5990306234853492
+      },
+      {
+        "frame_idx": 9,
+        "bbox_xywh": [671,320,199,127],
+        "mask_ratio": 0.7953547263878448
+      },
+      {
+        "frame_idx": 9,
+        "bbox_xywh": [889,356,254,106],
+        "mask_ratio": 0.630589808349428
+      },
+      {
+        "frame_idx": 10,
+        "bbox_xywh": [690,323,197,123],
+        "mask_ratio": 0.8076843712599563
+      },
+      {
+        "frame_idx": 10,
+        "bbox_xywh": [904,362,222,99],
+        "mask_ratio": 0.6786331786331786
+      },
+      {
+        "frame_idx": 11,
+        "bbox_xywh": [707,324,191,124],
+        "mask_ratio": 0.8016804593818612
+      },
+      {
+        "frame_idx": 11,
+        "bbox_xywh": [915,365,228,95],
+        "mask_ratio": 0.6615881809787627
+      },
+      {
+        "frame_idx": 12,
+        "bbox_xywh": [723,327,187,121],
+        "mask_ratio": 0.8153091439430769
+      },
+      {
+        "frame_idx": 12,
+        "bbox_xywh": [925,365,203,95],
+        "mask_ratio": 0.6789732953072336
+      },
+      {
+        "frame_idx": 13,
+        "bbox_xywh": [701,327,219,122],
+        "mask_ratio": 0.7575417321655813
+      },
+      {
+        "frame_idx": 13,
+        "bbox_xywh": [937,366,208,94],
+        "mask_ratio": 0.640855155482815
+      },
+      {
+        "frame_idx": 14,
+        "bbox_xywh": [711,327,218,121],
+        "mask_ratio": 0.7593449086359846
+      },
+      {
+        "frame_idx": 14,
+        "bbox_xywh": [945,374,184,86],
+        "mask_ratio": 0.7112613751263903
+      },
+      {
+        "frame_idx": 15,
+        "bbox_xywh": [721,330,216,118],
+        "mask_ratio": 0.7603185812931575
+      },
+      {
+        "frame_idx": 15,
+        "bbox_xywh": [953,375,173,84],
+        "mask_ratio": 0.7152491054225159
+      },
+      {
+        "frame_idx": 16,
+        "bbox_xywh": [729,332,216,115],
+        "mask_ratio": 0.7469404186795491
+      },
+      {
+        "frame_idx": 16,
+        "bbox_xywh": [960,375,168,83],
+        "mask_ratio": 0.7115605278255881
+      },
+      {
+        "frame_idx": 17,
+        "bbox_xywh": [737,334,216,112],
+        "mask_ratio": 0.7584738756613757
+      },
+      {
+        "frame_idx": 17,
+        "bbox_xywh": [966,376,164,83],
+        "mask_ratio": 0.6866000587716721
+      },
+      {
+        "frame_idx": 18,
+        "bbox_xywh": [745,336,215,110],
+        "mask_ratio": 0.7562367864693446
+      },
+      {
+        "frame_idx": 18,
+        "bbox_xywh": [973,377,156,81],
+        "mask_ratio": 0.6999841722063944
+      },
+      {
+        "frame_idx": 19,
+        "bbox_xywh": [752,337,216,108],
+        "mask_ratio": 0.7471707818930041
+      },
+      {
+        "frame_idx": 19,
+        "bbox_xywh": [979,377,150,79],
+        "mask_ratio": 0.6981434599156118
+      },
+      {
+        "frame_idx": 20,
+        "bbox_xywh": [759,339,214,107],
+        "mask_ratio": 0.7453052668355314
+      },
+      {
+        "frame_idx": 20,
+        "bbox_xywh": [984,378,147,77],
+        "mask_ratio": 0.6849545012810319
+      },
+      {
+        "frame_idx": 21,
+        "bbox_xywh": [766,339,211,107],
+        "mask_ratio": 0.7717145767816804
+      },
+      {
+        "frame_idx": 21,
+        "bbox_xywh": [989,378,143,78],
+        "mask_ratio": 0.6708804016496325
+      },
+      {
+        "frame_idx": 22,
+        "bbox_xywh": [772,341,211,105],
+        "mask_ratio": 0.7600541638456331
+      },
+      {
+        "frame_idx": 22,
+        "bbox_xywh": [995,378,138,77],
+        "mask_ratio": 0.6729719555806513
+      },
+      {
+        "frame_idx": 23,
+        "bbox_xywh": [778,342,210,103],
+        "mask_ratio": 0.7584835876098012
+      },
+      {
+        "frame_idx": 23,
+        "bbox_xywh": [1000,377,134,76],
+        "mask_ratio": 0.665553809897879
+      },
+      {
+        "frame_idx": 24,
+        "bbox_xywh": [784,342,209,102],
+        "mask_ratio": 0.7609062763861526
+      },
+      {
+        "frame_idx": 24,
+        "bbox_xywh": [1004,377,118,75],
+        "mask_ratio": 0.7201129943502825
+      },
+      {
+        "frame_idx": 25,
+        "bbox_xywh": [790,343,206,101],
+        "mask_ratio": 0.769537633374988
+      },
+      {
+        "frame_idx": 25,
+        "bbox_xywh": [1008,378,115,75],
+        "mask_ratio": 0.7128115942028985
+      },
+      {
+        "frame_idx": 26,
+        "bbox_xywh": [795,344,205,101],
+        "mask_ratio": 0.7584158415841584
+      },
+      {
+        "frame_idx": 26,
+        "bbox_xywh": [1012,379,110,74],
+        "mask_ratio": 0.7042997542997543
+      },
+      {
+        "frame_idx": 27,
+        "bbox_xywh": [800,347,202,98],
+        "mask_ratio": 0.7594463527985451
+      },
+      {
+        "frame_idx": 27,
+        "bbox_xywh": [1015,379,107,74],
+        "mask_ratio": 0.6973983329123516
+      },
+      {
+        "frame_idx": 28,
+        "bbox_xywh": [804,349,202,96],
+        "mask_ratio": 0.743450907590759
+      },
+      {
+        "frame_idx": 28,
+        "bbox_xywh": [1018,380,106,73],
+        "mask_ratio": 0.695528560351512
+      }
+    ]
+  },
+  "hallucination_tracks": [
+    {
+      "id": 1,
+      "class": "vehicle",
+      "detections": [0,2,3,4,5,6,7,8,9,10,11,12,13,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56],
+      "relevancy": 34
+    },
+    {
+      "id": 2,
+      "class": "vehicle",
+      "detections": [1],
+      "relevancy": 1
+    },
+    {
+      "id": 3,
+      "class": "vehicle",
+      "detections": [15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57],
+      "relevancy": 19
+    },
+    {
+      "id": 4,
+      "class": "pedestrian",
+      "detections": [0],
+      "relevancy": 0
+    },
+    {
+      "id": 5,
+      "class": "pedestrian",
+      "detections": [1],
+      "relevancy": 0
+    },
+    {
+      "id": 6,
+      "class": "pedestrian",
+      "detections": [2],
+      "relevancy": 0
+    },
+    {
+      "id": 7,
+      "class": "pedestrian",
+      "detections": [3,4,5,6,7,8],
+      "relevancy": 0
+    }
+  ],
+  "mean_score": NaN,
+  "std_score": NaN,
+  "min_score": NaN,
+  "max_score": NaN,
+  "processor_output_labels": [
+    "distance_threshold_m (100m)",
+    "relevant_lanes (['ego', 'left', 'right'])"
+  ],
+  "tracks": [
+    {
+      "track_id": 1007,
+      "object_type": "Car",
+      "processor_output": [0,12]
+    },
+    {
+      "track_id": 1008,
+      "object_type": "Car",
+      "processor_output": [0,29]
+    },
+    {
+      "track_id": 1009,
+      "object_type": "Car",
+      "processor_output": [0,29]
+    },
+    {
+      "track_id": 10010,
+      "object_type": "Cyclist",
+      "processor_output": [0,29]
+    },
+    {
+      "track_id": 10011,
+      "object_type": "Car",
+      "processor_output": [0,29]
+    },
+    {
+      "track_id": 10012,
+      "object_type": "Car",
+      "processor_output": [0,29]
+    },
+    {
+      "track_id": 10013,
+      "object_type": "Car",
+      "processor_output": [0,29]
+    },
+    {
+      "track_id": 10014,
+      "object_type": "Car",
+      "processor_output": [0,29]
+    },
+    {
+      "track_id": 10015,
+      "object_type": "Cyclist",
+      "processor_output": [29,0]
+    },
+    {
+      "track_id": 10016,
+      "object_type": "Car",
+      "processor_output": [29,0]
+    },
+    {
+      "track_id": 10021,
+      "object_type": "Car",
+      "processor_output": [0,29]
+    },
+    {
+      "track_id": 10022,
+      "object_type": "Cyclist",
+      "processor_output": [0,29]
+    },
+    {
+      "track_id": 10023,
+      "object_type": "Car",
+      "processor_output": [0,29]
+    },
+    {
+      "track_id": 10024,
+      "object_type": "Cyclist",
+      "processor_output": [0,29]
+    },
+    {
+      "track_id": 10025,
+      "object_type": "Car",
+      "processor_output": [3,26]
+    },
+    {
+      "track_id": 10026,
+      "object_type": "Car",
+      "processor_output": [29,0]
+    },
+    {
+      "track_id": 10031,
+      "object_type": "Car",
+      "processor_output": [23,0]
+    },
+    {
+      "track_id": 10032,
+      "object_type": "Car",
+      "processor_output": [29,0]
+    },
+    {
+      "track_id": 10033,
+      "object_type": "Car",
+      "processor_output": [29,0]
+    },
+    {
+      "track_id": 10034,
+      "object_type": "Car",
+      "processor_output": [29,0]
+    },
+    {
+      "track_id": 10035,
+      "object_type": "Car",
+      "processor_output": [29,0]
+    },
+    {
+      "track_id": 10036,
+      "object_type": "Car",
+      "processor_output": [29,0]
+    },
+    {
+      "track_id": 10037,
+      "object_type": "Car",
+      "processor_output": [29,0]
+    },
+    {
+      "track_id": 10038,
+      "object_type": "Car",
+      "processor_output": [29,0]
+    },
+    {
+      "track_id": 10039,
+      "object_type": "Car",
+      "processor_output": [29,0]
+    },
+    {
+      "track_id": 10040,
+      "object_type": "Cyclist",
+      "processor_output": [29,0]
+    }
+  ],
+  "score_matrix": {
+    "format": "sparse",
+    "shape": [29,40],
+    "data": []
+  },
+  "metadata": {
+    "matrix_format": "sparse",
+    "version": "1.0"
+  }
+}

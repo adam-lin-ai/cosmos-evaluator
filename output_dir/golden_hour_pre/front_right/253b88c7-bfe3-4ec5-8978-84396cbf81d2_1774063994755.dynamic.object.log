@@ -1,0 +1,654 @@
+2026-03-30 20:48:26,223 - checks.obstacle.object_processor_base - INFO - Logging to file: /home/adamlin/cosmos-evaluator/output_dir/253b88c7-bfe3-4ec5-8978-84396cbf81d2_1774063994755.dynamic.object.log
+2026-03-30 20:48:28,915 - checks.obstacle.object_processor_base - INFO - Hallucination detector enabled
+2026-03-30 20:48:28,915 - checks.obstacle.object_processor_base - INFO - Loading data for clip 253b88c7-bfe3-4ec5-8978-84396cbf81d2_1774063994755
+2026-03-30 20:48:29,559 - checks.obstacle.object_processor_base - INFO - Loaded 88 ego-reference poses from 'front_center' for importance filtering (evaluation camera: 'front_right')
+2026-03-30 20:48:29,631 - checks.obstacle.object_processor_base - INFO - Original video frames: 29
+2026-03-30 20:48:29,631 - checks.obstacle.object_processor_base - INFO - Video FPS: 10.0
+2026-03-30 20:48:29,631 - checks.obstacle.object_processor_base - INFO - Frame skip: 1
+2026-03-30 20:48:29,631 - checks.obstacle.object_processor_base - INFO - Target (object/pose) FPS: 30.0
+2026-03-30 20:48:30,103 - checks.obstacle.object_processor_base - INFO - Starting frame processing
+2026-03-30 20:48:30,104 - checks.obstacle.object_processor_base - INFO - Video dataloader length: 29
+2026-03-30 20:48:30,104 - checks.obstacle.object_processor_base - INFO - Camera poses available: 88
+2026-03-30 20:48:30,187 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=0 -> mapped_idx=0 / 87 (objects: 40)
+2026-03-30 20:48:30,187 - checks.obstacle.object_processor_base - INFO - Frame video_idx=0 mapped_idx=0: ego position in world =(-0.6, 0.5, 1.7)
+2026-03-30 20:48:30,187 - checks.obstacle.object_processor_base - INFO - Frame video_idx=0 mapped_idx=0: camera RPY=(-82.8, 74.3, -170.3)
+2026-03-30 20:49:18,892 - checks.obstacle.object_processor_base - INFO - Frame 0 class=motorcycle filtering summary:
+2026-03-30 20:49:18,892 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:49:18,892 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:49:18,892 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:49:18,892 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:49:18,892 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:49:18,892 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:49:18,892 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:49:18,896 - checks.obstacle.object_processor_base - INFO - Frame 0 class=vehicle filtering summary:
+2026-03-30 20:49:18,897 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:49:18,897 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:49:18,897 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:49:18,897 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:49:18,897 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:49:18,897 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:49:18,897 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:49:18,917 - checks.obstacle.object_processor_base - INFO - Frame 0: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 20:49:19,093 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=1 -> mapped_idx=3 / 87 (objects: 40)
+2026-03-30 20:49:19,093 - checks.obstacle.object_processor_base - INFO - Frame video_idx=1 mapped_idx=3: ego position in world =(-0.8, -0.3, 1.7)
+2026-03-30 20:49:19,093 - checks.obstacle.object_processor_base - INFO - Frame video_idx=1 mapped_idx=3: camera RPY=(-82.8, 74.2, -170.3)
+2026-03-30 20:49:57,321 - checks.obstacle.object_processor_base - INFO - Frame 3 class=motorcycle filtering summary:
+2026-03-30 20:49:57,321 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:49:57,321 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:49:57,321 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:49:57,321 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:49:57,321 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:49:57,321 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:49:57,321 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:49:57,326 - checks.obstacle.object_processor_base - INFO - Frame 3 class=vehicle filtering summary:
+2026-03-30 20:49:57,326 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:49:57,326 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:49:57,326 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:49:57,326 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:49:57,326 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:49:57,326 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:49:57,326 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:49:57,345 - checks.obstacle.object_processor_base - INFO - Frame 3: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 20:49:57,468 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=2 -> mapped_idx=6 / 87 (objects: 40)
+2026-03-30 20:49:57,468 - checks.obstacle.object_processor_base - INFO - Frame video_idx=2 mapped_idx=6: ego position in world =(-1.0, -1.0, 1.7)
+2026-03-30 20:49:57,468 - checks.obstacle.object_processor_base - INFO - Frame video_idx=2 mapped_idx=6: camera RPY=(-82.8, 74.2, -170.2)
+2026-03-30 20:50:34,815 - checks.obstacle.object_processor_base - INFO - Frame 6 class=motorcycle filtering summary:
+2026-03-30 20:50:34,815 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:50:34,815 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:50:34,815 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:50:34,815 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:50:34,815 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:50:34,815 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:50:34,815 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:50:34,819 - checks.obstacle.object_processor_base - INFO - Frame 6 class=vehicle filtering summary:
+2026-03-30 20:50:34,819 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:50:34,819 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:50:34,819 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:50:34,819 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:50:34,819 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:50:34,819 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:50:34,819 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:50:34,838 - checks.obstacle.object_processor_base - INFO - Frame 6: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 20:50:34,949 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=3 -> mapped_idx=9 / 87 (objects: 40)
+2026-03-30 20:50:34,949 - checks.obstacle.object_processor_base - INFO - Frame video_idx=3 mapped_idx=9: ego position in world =(-1.2, -1.7, 1.7)
+2026-03-30 20:50:34,949 - checks.obstacle.object_processor_base - INFO - Frame video_idx=3 mapped_idx=9: camera RPY=(-82.8, 74.2, -170.2)
+2026-03-30 20:51:11,459 - checks.obstacle.object_processor_base - INFO - Frame 9 class=motorcycle filtering summary:
+2026-03-30 20:51:11,459 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:51:11,459 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:51:11,459 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:51:11,459 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:51:11,459 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:51:11,459 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:51:11,459 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:51:11,463 - checks.obstacle.object_processor_base - INFO - Frame 9 class=vehicle filtering summary:
+2026-03-30 20:51:11,463 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:51:11,463 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:51:11,463 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:51:11,463 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:51:11,463 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:51:11,463 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:51:11,463 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:51:11,482 - checks.obstacle.object_processor_base - INFO - Frame 9: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 1, 'vehicle': 0}
+2026-03-30 20:51:11,598 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=4 -> mapped_idx=12 / 87 (objects: 40)
+2026-03-30 20:51:11,598 - checks.obstacle.object_processor_base - INFO - Frame video_idx=4 mapped_idx=12: ego position in world =(-1.4, -2.3, 1.7)
+2026-03-30 20:51:11,598 - checks.obstacle.object_processor_base - INFO - Frame video_idx=4 mapped_idx=12: camera RPY=(-82.6, 74.2, -170.0)
+2026-03-30 20:51:48,966 - checks.obstacle.object_processor_base - INFO - Frame 12 class=motorcycle filtering summary:
+2026-03-30 20:51:48,967 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:51:48,967 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:51:48,967 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:51:48,967 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:51:48,967 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:51:48,967 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:51:48,967 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:51:48,971 - checks.obstacle.object_processor_base - INFO - Frame 12 class=vehicle filtering summary:
+2026-03-30 20:51:48,971 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:51:48,971 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:51:48,971 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:51:48,971 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:51:48,971 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:51:48,971 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:51:48,971 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:51:48,990 - checks.obstacle.object_processor_base - INFO - Frame 12: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 20:51:49,091 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=5 -> mapped_idx=15 / 87 (objects: 40)
+2026-03-30 20:51:49,091 - checks.obstacle.object_processor_base - INFO - Frame video_idx=5 mapped_idx=15: ego position in world =(-1.5, -3.0, 1.7)
+2026-03-30 20:51:49,091 - checks.obstacle.object_processor_base - INFO - Frame video_idx=5 mapped_idx=15: camera RPY=(-82.3, 74.1, -169.7)
+2026-03-30 20:52:25,782 - checks.obstacle.object_processor_base - INFO - Frame 15 class=motorcycle filtering summary:
+2026-03-30 20:52:25,782 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:52:25,782 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:52:25,782 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:52:25,782 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:52:25,782 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:52:25,782 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:52:25,782 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:52:25,786 - checks.obstacle.object_processor_base - INFO - Frame 15 class=vehicle filtering summary:
+2026-03-30 20:52:25,786 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:52:25,786 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:52:25,786 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:52:25,786 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:52:25,786 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:52:25,787 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:52:25,787 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:52:25,805 - checks.obstacle.object_processor_base - INFO - Frame 15: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 20:52:25,932 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=6 -> mapped_idx=18 / 87 (objects: 40)
+2026-03-30 20:52:25,932 - checks.obstacle.object_processor_base - INFO - Frame video_idx=6 mapped_idx=18: ego position in world =(-1.7, -3.6, 1.7)
+2026-03-30 20:52:25,933 - checks.obstacle.object_processor_base - INFO - Frame video_idx=6 mapped_idx=18: camera RPY=(-82.1, 74.1, -169.5)
+2026-03-30 20:53:02,500 - checks.obstacle.object_processor_base - INFO - Frame 18 class=motorcycle filtering summary:
+2026-03-30 20:53:02,500 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:53:02,500 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:53:02,500 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:53:02,500 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:53:02,500 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:53:02,500 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:53:02,500 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:53:02,505 - checks.obstacle.object_processor_base - INFO - Frame 18 class=vehicle filtering summary:
+2026-03-30 20:53:02,505 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:53:02,505 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:53:02,505 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:53:02,505 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:53:02,505 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:53:02,505 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:53:02,505 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:53:02,525 - checks.obstacle.object_processor_base - INFO - Frame 18: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 20:53:02,645 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=7 -> mapped_idx=21 / 87 (objects: 40)
+2026-03-30 20:53:02,645 - checks.obstacle.object_processor_base - INFO - Frame video_idx=7 mapped_idx=21: ego position in world =(-1.8, -4.1, 1.7)
+2026-03-30 20:53:02,645 - checks.obstacle.object_processor_base - INFO - Frame video_idx=7 mapped_idx=21: camera RPY=(-81.7, 74.1, -169.3)
+2026-03-30 20:53:40,571 - checks.obstacle.object_processor_base - INFO - Frame 21 class=motorcycle filtering summary:
+2026-03-30 20:53:40,571 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:53:40,571 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:53:40,571 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:53:40,571 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:53:40,571 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:53:40,571 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:53:40,571 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:53:40,576 - checks.obstacle.object_processor_base - INFO - Frame 21 class=vehicle filtering summary:
+2026-03-30 20:53:40,576 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:53:40,576 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:53:40,576 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:53:40,576 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:53:40,576 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:53:40,576 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:53:40,576 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:53:40,596 - checks.obstacle.object_processor_base - INFO - Frame 21: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 1, 'vehicle': 0}
+2026-03-30 20:53:40,705 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=8 -> mapped_idx=24 / 87 (objects: 40)
+2026-03-30 20:53:40,705 - checks.obstacle.object_processor_base - INFO - Frame video_idx=8 mapped_idx=24: ego position in world =(-2.0, -4.7, 1.7)
+2026-03-30 20:53:40,705 - checks.obstacle.object_processor_base - INFO - Frame video_idx=8 mapped_idx=24: camera RPY=(-81.7, 74.1, -169.2)
+2026-03-30 20:54:17,768 - checks.obstacle.object_processor_base - INFO - Frame 24 class=motorcycle filtering summary:
+2026-03-30 20:54:17,768 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:54:17,768 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:54:17,768 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:54:17,768 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:54:17,768 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:54:17,768 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:54:17,768 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:54:17,772 - checks.obstacle.object_processor_base - INFO - Frame 24 class=vehicle filtering summary:
+2026-03-30 20:54:17,772 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:54:17,772 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:54:17,772 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:54:17,772 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:54:17,772 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:54:17,772 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:54:17,772 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:54:17,791 - checks.obstacle.object_processor_base - INFO - Frame 24: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 20:54:17,899 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=9 -> mapped_idx=27 / 87 (objects: 40)
+2026-03-30 20:54:17,899 - checks.obstacle.object_processor_base - INFO - Frame video_idx=9 mapped_idx=27: ego position in world =(-2.1, -5.2, 1.7)
+2026-03-30 20:54:17,899 - checks.obstacle.object_processor_base - INFO - Frame video_idx=9 mapped_idx=27: camera RPY=(-81.9, 74.1, -169.4)
+2026-03-30 20:54:54,659 - checks.obstacle.object_processor_base - INFO - Frame 27 class=motorcycle filtering summary:
+2026-03-30 20:54:54,659 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:54:54,659 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:54:54,659 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:54:54,659 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:54:54,659 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:54:54,659 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:54:54,659 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:54:54,663 - checks.obstacle.object_processor_base - INFO - Frame 27 class=vehicle filtering summary:
+2026-03-30 20:54:54,663 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:54:54,663 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:54:54,663 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:54:54,663 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:54:54,663 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:54:54,663 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:54:54,663 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:54:54,683 - checks.obstacle.object_processor_base - INFO - Frame 27: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 20:54:54,780 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=10 -> mapped_idx=30 / 87 (objects: 40)
+2026-03-30 20:54:54,780 - checks.obstacle.object_processor_base - INFO - Frame video_idx=10 mapped_idx=30: ego position in world =(-2.3, -5.7, 1.7)
+2026-03-30 20:54:54,780 - checks.obstacle.object_processor_base - INFO - Frame video_idx=10 mapped_idx=30: camera RPY=(-83.0, 74.2, -170.5)
+2026-03-30 20:55:31,579 - checks.obstacle.object_processor_base - INFO - Frame 30 class=motorcycle filtering summary:
+2026-03-30 20:55:31,580 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:55:31,580 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:55:31,580 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:55:31,580 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:55:31,580 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:55:31,580 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:55:31,580 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:55:31,584 - checks.obstacle.object_processor_base - INFO - Frame 30 class=vehicle filtering summary:
+2026-03-30 20:55:31,584 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:55:31,584 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:55:31,584 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:55:31,584 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:55:31,584 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:55:31,584 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:55:31,584 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:55:31,603 - checks.obstacle.object_processor_base - INFO - Frame 30: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 20:55:31,739 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=11 -> mapped_idx=33 / 87 (objects: 40)
+2026-03-30 20:55:31,739 - checks.obstacle.object_processor_base - INFO - Frame video_idx=11 mapped_idx=33: ego position in world =(-2.4, -6.1, 1.7)
+2026-03-30 20:55:31,739 - checks.obstacle.object_processor_base - INFO - Frame video_idx=11 mapped_idx=33: camera RPY=(-82.9, 74.1, -170.4)
+2026-03-30 20:56:09,870 - checks.obstacle.object_processor_base - INFO - Frame 33 class=motorcycle filtering summary:
+2026-03-30 20:56:09,871 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:56:09,871 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:56:09,871 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:56:09,871 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:56:09,871 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:56:09,871 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:56:09,871 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:56:09,875 - checks.obstacle.object_processor_base - INFO - Frame 33 class=vehicle filtering summary:
+2026-03-30 20:56:09,875 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:56:09,875 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:56:09,875 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:56:09,875 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:56:09,875 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:56:09,875 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:56:09,875 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:56:09,894 - checks.obstacle.object_processor_base - INFO - Frame 33: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 1, 'vehicle': 0}
+2026-03-30 20:56:09,987 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=12 -> mapped_idx=36 / 87 (objects: 40)
+2026-03-30 20:56:09,987 - checks.obstacle.object_processor_base - INFO - Frame video_idx=12 mapped_idx=36: ego position in world =(-2.5, -6.6, 1.7)
+2026-03-30 20:56:09,987 - checks.obstacle.object_processor_base - INFO - Frame video_idx=12 mapped_idx=36: camera RPY=(-82.9, 74.1, -170.4)
+2026-03-30 20:56:47,472 - checks.obstacle.object_processor_base - INFO - Frame 36 class=motorcycle filtering summary:
+2026-03-30 20:56:47,472 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:56:47,472 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:56:47,472 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:56:47,472 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:56:47,472 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:56:47,472 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:56:47,472 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:56:47,476 - checks.obstacle.object_processor_base - INFO - Frame 36 class=vehicle filtering summary:
+2026-03-30 20:56:47,476 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:56:47,476 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:56:47,476 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:56:47,476 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:56:47,476 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:56:47,476 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:56:47,476 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:56:47,495 - checks.obstacle.object_processor_base - INFO - Frame 36: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 1, 'vehicle': 0}
+2026-03-30 20:56:47,587 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=13 -> mapped_idx=39 / 87 (objects: 40)
+2026-03-30 20:56:47,587 - checks.obstacle.object_processor_base - INFO - Frame video_idx=13 mapped_idx=39: ego position in world =(-2.6, -7.0, 1.7)
+2026-03-30 20:56:47,587 - checks.obstacle.object_processor_base - INFO - Frame video_idx=13 mapped_idx=39: camera RPY=(-82.8, 74.1, -170.4)
+2026-03-30 20:57:24,580 - checks.obstacle.object_processor_base - INFO - Frame 39 class=motorcycle filtering summary:
+2026-03-30 20:57:24,581 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:57:24,581 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:57:24,581 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:57:24,581 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:57:24,581 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:57:24,581 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:57:24,581 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:57:24,585 - checks.obstacle.object_processor_base - INFO - Frame 39 class=vehicle filtering summary:
+2026-03-30 20:57:24,585 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:57:24,585 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:57:24,585 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:57:24,585 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:57:24,585 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:57:24,585 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:57:24,585 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:57:24,605 - checks.obstacle.object_processor_base - INFO - Frame 39: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 1, 'vehicle': 0}
+2026-03-30 20:57:24,699 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=14 -> mapped_idx=42 / 87 (objects: 40)
+2026-03-30 20:57:24,699 - checks.obstacle.object_processor_base - INFO - Frame video_idx=14 mapped_idx=42: ego position in world =(-2.7, -7.3, 1.7)
+2026-03-30 20:57:24,699 - checks.obstacle.object_processor_base - INFO - Frame video_idx=14 mapped_idx=42: camera RPY=(-82.9, 74.1, -170.4)
+2026-03-30 20:58:01,861 - checks.obstacle.object_processor_base - INFO - Frame 42 class=motorcycle filtering summary:
+2026-03-30 20:58:01,861 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:58:01,861 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:58:01,861 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:58:01,861 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:58:01,861 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:58:01,861 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:58:01,861 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:58:01,865 - checks.obstacle.object_processor_base - INFO - Frame 42 class=vehicle filtering summary:
+2026-03-30 20:58:01,866 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:58:01,866 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:58:01,866 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:58:01,866 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:58:01,866 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:58:01,866 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:58:01,866 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:58:01,886 - checks.obstacle.object_processor_base - INFO - Frame 42: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 1, 'vehicle': 0}
+2026-03-30 20:58:01,981 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=15 -> mapped_idx=45 / 87 (objects: 40)
+2026-03-30 20:58:01,981 - checks.obstacle.object_processor_base - INFO - Frame video_idx=15 mapped_idx=45: ego position in world =(-2.8, -7.7, 1.7)
+2026-03-30 20:58:01,981 - checks.obstacle.object_processor_base - INFO - Frame video_idx=15 mapped_idx=45: camera RPY=(-83.0, 74.1, -170.5)
+2026-03-30 20:58:38,501 - checks.obstacle.object_processor_base - INFO - Frame 45 class=motorcycle filtering summary:
+2026-03-30 20:58:38,501 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:58:38,501 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:58:38,501 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:58:38,501 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:58:38,501 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:58:38,501 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:58:38,501 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:58:38,505 - checks.obstacle.object_processor_base - INFO - Frame 45 class=vehicle filtering summary:
+2026-03-30 20:58:38,505 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:58:38,505 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:58:38,505 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:58:38,505 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:58:38,505 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:58:38,505 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:58:38,505 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:58:38,524 - checks.obstacle.object_processor_base - INFO - Frame 45: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 1, 'vehicle': 0}
+2026-03-30 20:58:38,650 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=16 -> mapped_idx=48 / 87 (objects: 40)
+2026-03-30 20:58:38,650 - checks.obstacle.object_processor_base - INFO - Frame video_idx=16 mapped_idx=48: ego position in world =(-2.9, -8.0, 1.7)
+2026-03-30 20:58:38,650 - checks.obstacle.object_processor_base - INFO - Frame video_idx=16 mapped_idx=48: camera RPY=(-83.0, 74.1, -170.5)
+2026-03-30 20:59:16,046 - checks.obstacle.object_processor_base - INFO - Frame 48 class=motorcycle filtering summary:
+2026-03-30 20:59:16,047 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:59:16,047 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:59:16,047 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:59:16,047 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:59:16,047 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:59:16,047 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:59:16,047 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:59:16,051 - checks.obstacle.object_processor_base - INFO - Frame 48 class=vehicle filtering summary:
+2026-03-30 20:59:16,051 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:59:16,051 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 20:59:16,051 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 20:59:16,051 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:59:16,051 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:59:16,051 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:59:16,051 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:59:16,070 - checks.obstacle.object_processor_base - INFO - Frame 48: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 20:59:16,201 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=17 -> mapped_idx=51 / 87 (objects: 40)
+2026-03-30 20:59:16,201 - checks.obstacle.object_processor_base - INFO - Frame video_idx=17 mapped_idx=51: ego position in world =(-2.9, -8.3, 1.7)
+2026-03-30 20:59:16,201 - checks.obstacle.object_processor_base - INFO - Frame video_idx=17 mapped_idx=51: camera RPY=(-83.0, 74.1, -170.5)
+2026-03-30 20:59:52,539 - checks.obstacle.object_processor_base - INFO - Frame 51 class=motorcycle filtering summary:
+2026-03-30 20:59:52,539 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 20:59:52,539 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 20:59:52,539 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 20:59:52,539 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 20:59:52,539 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:59:52,539 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:59:52,539 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 20:59:52,543 - checks.obstacle.object_processor_base - INFO - Frame 51 class=vehicle filtering summary:
+2026-03-30 20:59:52,543 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 20:59:52,543 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 21
+2026-03-30 20:59:52,543 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 10
+2026-03-30 20:59:52,543 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 20:59:52,543 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 20:59:52,543 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 20:59:52,543 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 65.6% importance, 0.0% occlusion
+2026-03-30 20:59:52,563 - checks.obstacle.object_processor_base - INFO - Frame 51: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 20:59:52,666 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=18 -> mapped_idx=54 / 87 (objects: 40)
+2026-03-30 20:59:52,666 - checks.obstacle.object_processor_base - INFO - Frame video_idx=18 mapped_idx=54: ego position in world =(-3.0, -8.6, 1.7)
+2026-03-30 20:59:52,666 - checks.obstacle.object_processor_base - INFO - Frame video_idx=18 mapped_idx=54: camera RPY=(-83.0, 74.1, -170.5)
+2026-03-30 21:00:30,228 - checks.obstacle.object_processor_base - INFO - Frame 54 class=motorcycle filtering summary:
+2026-03-30 21:00:30,228 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 21:00:30,228 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 21:00:30,228 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 21:00:30,228 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 21:00:30,228 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:00:30,228 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:00:30,228 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:00:30,232 - checks.obstacle.object_processor_base - INFO - Frame 54 class=vehicle filtering summary:
+2026-03-30 21:00:30,232 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 21:00:30,232 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 21
+2026-03-30 21:00:30,232 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 10
+2026-03-30 21:00:30,232 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 21:00:30,232 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:00:30,232 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:00:30,232 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 65.6% importance, 0.0% occlusion
+2026-03-30 21:00:30,252 - checks.obstacle.object_processor_base - INFO - Frame 54: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 21:00:30,353 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=19 -> mapped_idx=57 / 87 (objects: 40)
+2026-03-30 21:00:30,354 - checks.obstacle.object_processor_base - INFO - Frame video_idx=19 mapped_idx=57: ego position in world =(-3.1, -8.9, 1.7)
+2026-03-30 21:00:30,354 - checks.obstacle.object_processor_base - INFO - Frame video_idx=19 mapped_idx=57: camera RPY=(-83.0, 74.1, -170.5)
+2026-03-30 21:01:07,372 - checks.obstacle.object_processor_base - INFO - Frame 57 class=motorcycle filtering summary:
+2026-03-30 21:01:07,372 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 21:01:07,372 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 21:01:07,372 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 21:01:07,372 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 21:01:07,372 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:01:07,372 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:01:07,372 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:01:07,376 - checks.obstacle.object_processor_base - INFO - Frame 57 class=vehicle filtering summary:
+2026-03-30 21:01:07,376 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 21:01:07,376 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 21
+2026-03-30 21:01:07,376 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 10
+2026-03-30 21:01:07,376 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 21:01:07,376 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:01:07,376 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:01:07,376 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 65.6% importance, 0.0% occlusion
+2026-03-30 21:01:07,396 - checks.obstacle.object_processor_base - INFO - Frame 57: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 21:01:07,495 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=20 -> mapped_idx=60 / 87 (objects: 40)
+2026-03-30 21:01:07,495 - checks.obstacle.object_processor_base - INFO - Frame video_idx=20 mapped_idx=60: ego position in world =(-3.2, -9.2, 1.7)
+2026-03-30 21:01:07,495 - checks.obstacle.object_processor_base - INFO - Frame video_idx=20 mapped_idx=60: camera RPY=(-83.0, 74.1, -170.5)
+2026-03-30 21:01:44,086 - checks.obstacle.object_processor_base - INFO - Frame 60 class=motorcycle filtering summary:
+2026-03-30 21:01:44,086 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 21:01:44,086 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 21:01:44,086 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 21:01:44,086 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 21:01:44,086 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:01:44,086 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:01:44,086 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:01:44,090 - checks.obstacle.object_processor_base - INFO - Frame 60 class=vehicle filtering summary:
+2026-03-30 21:01:44,090 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 21:01:44,090 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 21
+2026-03-30 21:01:44,090 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 10
+2026-03-30 21:01:44,090 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 21:01:44,090 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:01:44,090 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:01:44,090 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 65.6% importance, 0.0% occlusion
+2026-03-30 21:01:44,109 - checks.obstacle.object_processor_base - INFO - Frame 60: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 21:01:44,215 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=21 -> mapped_idx=63 / 87 (objects: 40)
+2026-03-30 21:01:44,215 - checks.obstacle.object_processor_base - INFO - Frame video_idx=21 mapped_idx=63: ego position in world =(-3.3, -9.5, 1.7)
+2026-03-30 21:01:44,215 - checks.obstacle.object_processor_base - INFO - Frame video_idx=21 mapped_idx=63: camera RPY=(-83.0, 74.1, -170.5)
+2026-03-30 21:02:22,487 - checks.obstacle.object_processor_base - INFO - Frame 63 class=motorcycle filtering summary:
+2026-03-30 21:02:22,487 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 21:02:22,487 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 21:02:22,487 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 21:02:22,487 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 21:02:22,487 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:02:22,487 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:02:22,487 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:02:22,491 - checks.obstacle.object_processor_base - INFO - Frame 63 class=vehicle filtering summary:
+2026-03-30 21:02:22,491 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 21:02:22,491 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 21
+2026-03-30 21:02:22,491 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 10
+2026-03-30 21:02:22,491 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 21:02:22,491 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:02:22,491 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:02:22,491 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 65.6% importance, 0.0% occlusion
+2026-03-30 21:02:22,510 - checks.obstacle.object_processor_base - INFO - Frame 63: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 21:02:22,619 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=22 -> mapped_idx=66 / 87 (objects: 40)
+2026-03-30 21:02:22,619 - checks.obstacle.object_processor_base - INFO - Frame video_idx=22 mapped_idx=66: ego position in world =(-3.3, -9.8, 1.7)
+2026-03-30 21:02:22,619 - checks.obstacle.object_processor_base - INFO - Frame video_idx=22 mapped_idx=66: camera RPY=(-82.8, 74.1, -170.5)
+2026-03-30 21:02:59,091 - checks.obstacle.object_processor_base - INFO - Frame 66 class=motorcycle filtering summary:
+2026-03-30 21:02:59,091 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 21:02:59,091 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 21:02:59,091 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 21:02:59,091 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 21:02:59,091 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:02:59,091 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:02:59,091 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:02:59,095 - checks.obstacle.object_processor_base - INFO - Frame 66 class=vehicle filtering summary:
+2026-03-30 21:02:59,095 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 21:02:59,095 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 21
+2026-03-30 21:02:59,095 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 10
+2026-03-30 21:02:59,095 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 21:02:59,095 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:02:59,095 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:02:59,095 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 65.6% importance, 0.0% occlusion
+2026-03-30 21:02:59,115 - checks.obstacle.object_processor_base - INFO - Frame 66: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 21:02:59,222 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=23 -> mapped_idx=69 / 87 (objects: 40)
+2026-03-30 21:02:59,222 - checks.obstacle.object_processor_base - INFO - Frame video_idx=23 mapped_idx=69: ego position in world =(-3.4, -10.1, 1.7)
+2026-03-30 21:02:59,222 - checks.obstacle.object_processor_base - INFO - Frame video_idx=23 mapped_idx=69: camera RPY=(-82.8, 74.1, -170.5)
+2026-03-30 21:03:35,971 - checks.obstacle.object_processor_base - INFO - Frame 69 class=motorcycle filtering summary:
+2026-03-30 21:03:35,972 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 21:03:35,972 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 21:03:35,972 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 21:03:35,972 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 21:03:35,972 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:03:35,972 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:03:35,972 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:03:35,976 - checks.obstacle.object_processor_base - INFO - Frame 69 class=vehicle filtering summary:
+2026-03-30 21:03:35,976 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 21:03:35,976 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 21:03:35,976 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 10
+2026-03-30 21:03:35,976 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 10
+2026-03-30 21:03:35,976 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:03:35,976 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:03:35,976 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:03:35,996 - checks.obstacle.object_processor_base - INFO - Frame 69: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 21:03:36,104 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=24 -> mapped_idx=72 / 87 (objects: 40)
+2026-03-30 21:03:36,104 - checks.obstacle.object_processor_base - INFO - Frame video_idx=24 mapped_idx=72: ego position in world =(-3.5, -10.5, 1.7)
+2026-03-30 21:03:36,104 - checks.obstacle.object_processor_base - INFO - Frame video_idx=24 mapped_idx=72: camera RPY=(-82.8, 74.1, -170.5)
+2026-03-30 21:04:13,325 - checks.obstacle.object_processor_base - INFO - Frame 72 class=motorcycle filtering summary:
+2026-03-30 21:04:13,325 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 21:04:13,325 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 21:04:13,325 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 21:04:13,325 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 21:04:13,325 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:04:13,325 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:04:13,325 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:04:13,329 - checks.obstacle.object_processor_base - INFO - Frame 72 class=vehicle filtering summary:
+2026-03-30 21:04:13,329 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 21:04:13,329 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 21:04:13,329 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 10
+2026-03-30 21:04:13,329 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 10
+2026-03-30 21:04:13,329 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:04:13,329 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:04:13,329 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:04:13,348 - checks.obstacle.object_processor_base - INFO - Frame 72: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 21:04:13,467 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=25 -> mapped_idx=75 / 87 (objects: 40)
+2026-03-30 21:04:13,467 - checks.obstacle.object_processor_base - INFO - Frame video_idx=25 mapped_idx=75: ego position in world =(-3.6, -10.8, 1.7)
+2026-03-30 21:04:13,467 - checks.obstacle.object_processor_base - INFO - Frame video_idx=25 mapped_idx=75: camera RPY=(-82.7, 74.1, -170.4)
+2026-03-30 21:04:50,621 - checks.obstacle.object_processor_base - INFO - Frame 75 class=motorcycle filtering summary:
+2026-03-30 21:04:50,622 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 21:04:50,622 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 21:04:50,622 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 21:04:50,622 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 21:04:50,622 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:04:50,622 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:04:50,622 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:04:50,626 - checks.obstacle.object_processor_base - INFO - Frame 75 class=vehicle filtering summary:
+2026-03-30 21:04:50,626 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 21:04:50,626 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 21:04:50,626 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 10
+2026-03-30 21:04:50,626 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 10
+2026-03-30 21:04:50,626 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:04:50,626 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:04:50,626 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:04:50,645 - checks.obstacle.object_processor_base - INFO - Frame 75: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 21:04:50,758 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=26 -> mapped_idx=78 / 87 (objects: 40)
+2026-03-30 21:04:50,758 - checks.obstacle.object_processor_base - INFO - Frame video_idx=26 mapped_idx=78: ego position in world =(-3.7, -11.1, 1.7)
+2026-03-30 21:04:50,758 - checks.obstacle.object_processor_base - INFO - Frame video_idx=26 mapped_idx=78: camera RPY=(-82.6, 74.1, -170.3)
+2026-03-30 21:05:27,384 - checks.obstacle.object_processor_base - INFO - Frame 78 class=motorcycle filtering summary:
+2026-03-30 21:05:27,384 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 21:05:27,384 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 21:05:27,384 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 21:05:27,384 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 21:05:27,384 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:05:27,384 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:05:27,384 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:05:27,388 - checks.obstacle.object_processor_base - INFO - Frame 78 class=vehicle filtering summary:
+2026-03-30 21:05:27,388 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 21:05:27,388 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 21:05:27,388 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 21:05:27,388 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 21:05:27,388 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:05:27,388 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:05:27,388 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:05:27,407 - checks.obstacle.object_processor_base - INFO - Frame 78: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 21:05:27,522 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=27 -> mapped_idx=81 / 87 (objects: 40)
+2026-03-30 21:05:27,522 - checks.obstacle.object_processor_base - INFO - Frame video_idx=27 mapped_idx=81: ego position in world =(-3.8, -11.5, 1.7)
+2026-03-30 21:05:27,523 - checks.obstacle.object_processor_base - INFO - Frame video_idx=27 mapped_idx=81: camera RPY=(-82.7, 74.1, -170.3)
+2026-03-30 21:06:05,383 - checks.obstacle.object_processor_base - INFO - Frame 81 class=motorcycle filtering summary:
+2026-03-30 21:06:05,383 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 21:06:05,383 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 21:06:05,383 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 21:06:05,383 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 21:06:05,383 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:06:05,383 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:06:05,383 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:06:05,387 - checks.obstacle.object_processor_base - INFO - Frame 81 class=vehicle filtering summary:
+2026-03-30 21:06:05,387 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 21:06:05,387 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 21:06:05,387 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 21:06:05,387 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 21:06:05,387 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:06:05,387 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:06:05,387 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:06:05,407 - checks.obstacle.object_processor_base - INFO - Frame 81: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 21:06:05,520 - checks.obstacle.object_processor_base - INFO - Processing frame video_idx=28 -> mapped_idx=84 / 87 (objects: 40)
+2026-03-30 21:06:05,521 - checks.obstacle.object_processor_base - INFO - Frame video_idx=28 mapped_idx=84: ego position in world =(-3.9, -11.8, 1.7)
+2026-03-30 21:06:05,521 - checks.obstacle.object_processor_base - INFO - Frame video_idx=28 mapped_idx=84: camera RPY=(-82.7, 74.1, -170.4)
+2026-03-30 21:06:43,080 - checks.obstacle.object_processor_base - INFO - Frame 84 class=motorcycle filtering summary:
+2026-03-30 21:06:43,080 - checks.obstacle.object_processor_base - INFO -   - Total objects: 8
+2026-03-30 21:06:43,080 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 5
+2026-03-30 21:06:43,080 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 2
+2026-03-30 21:06:43,080 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 3
+2026-03-30 21:06:43,080 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:06:43,080 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:06:43,080 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:06:43,084 - checks.obstacle.object_processor_base - INFO - Frame 84 class=vehicle filtering summary:
+2026-03-30 21:06:43,084 - checks.obstacle.object_processor_base - INFO -   - Total objects: 32
+2026-03-30 21:06:43,084 - checks.obstacle.object_processor_base - INFO -   - Importance filtered: 20
+2026-03-30 21:06:43,084 - checks.obstacle.object_processor_base - INFO -     * relevant_lanes (['ego', 'left', 'right']): 9
+2026-03-30 21:06:43,084 - checks.obstacle.object_processor_base - INFO -     * distance_threshold_m (100m): 11
+2026-03-30 21:06:43,084 - checks.obstacle.object_processor_base - INFO -   - Occlusion filtered: 0
+2026-03-30 21:06:43,084 - checks.obstacle.object_processor_base - INFO -   - Processed: 0
+2026-03-30 21:06:43,084 - checks.obstacle.object_processor_base - INFO -   - Filtering rates: 62.5% importance, 0.0% occlusion
+2026-03-30 21:06:43,104 - checks.obstacle.object_processor_base - INFO - Frame 84: hallucinations {'bicycle': 0, 'motorcycle': 0, 'pedestrian': 0, 'vehicle': 0}
+2026-03-30 21:06:43,215 - checks.obstacle.object_processor_base - INFO - Frame processing complete:
+2026-03-30 21:06:43,217 - checks.obstacle.object_processor_base - INFO -   - Total video frames: 29
+2026-03-30 21:06:43,218 - checks.obstacle.object_processor_base - INFO -   - Frames with object data: 29
+2026-03-30 21:06:43,219 - checks.obstacle.object_processor_base - INFO -   - Frames skipped (no objects): 0
+2026-03-30 21:06:43,219 - checks.obstacle.object_processor_base - INFO -   - Processing rate: 29/29 (100.0%)
+2026-03-30 21:06:43,219 - checks.obstacle.object_processor_base - INFO - Filter configuration:
+2026-03-30 21:06:43,219 - checks.obstacle.object_processor_base - INFO -   - Importance filter: distance_threshold=100m, oncoming_obstacles=False, relevant_lanes=['ego', 'left', 'right']
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO - ============================================================
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO - SCORE MATRIX SUMMARY
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO - ============================================================
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO - Matrix shape: 29 frames × 40 track IDs
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO - Unique track IDs: 40
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO - Tracks with valid scores: 0
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO - Frames with valid scores: 0
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO - Valid scores: 0
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO - NaN entries: 1160 (100.0%)
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO - 
+Compact Matrix (first 10 frames × first 10 track IDs):
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO - Frame\TrackID    0    1    2    3    4    5    6    7    8    9
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO -    0  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO -    1  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO -    2  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO -    3  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO -    4  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO -    5  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO -    6  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO -    7  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO -    8  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO -    9  ---  ---  ---  ---  ---  ---  ---  ---  ---  ---
+2026-03-30 21:06:43,701 - checks.obstacle.object_processor_base - INFO - ============================================================
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO - Results saved to: /home/adamlin/cosmos-evaluator/output_dir/253b88c7-bfe3-4ec5-8978-84396cbf81d2_1774063994755.dynamic.object.results.json
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO - ============================================================
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO - PERFORMANCE PROFILING SUMMARY
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO - ============================================================
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO - scene_rasterization:
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO -   Total: 1077.128s (98.5%)
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO -   Average: 37.142s
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO -   Count: 29
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO -   Range: 35.847s - 48.421s
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO - segmentation:
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO -   Total: 11.861s (1.1%)
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO -   Average: 0.409s
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO -   Count: 29
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO -   Range: 0.233s - 0.789s
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO - visualization:
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO -   Total: 2.178s (0.2%)
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO -   Average: 0.075s
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO -   Count: 29
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO -   Range: 0.055s - 0.115s
+2026-03-30 21:06:43,702 - checks.obstacle.object_processor_base - INFO - data_loader_init:
+2026-03-30 21:06:43,703 - checks.obstacle.object_processor_base - INFO -   Total: 0.609s (0.1%)
+2026-03-30 21:06:43,703 - checks.obstacle.object_processor_base - INFO -   Average: 0.609s
+2026-03-30 21:06:43,703 - checks.obstacle.object_processor_base - INFO -   Count: 1
+2026-03-30 21:06:43,703 - checks.obstacle.object_processor_base - INFO -   Range: 0.609s - 0.609s
+2026-03-30 21:06:43,703 - checks.obstacle.object_processor_base - INFO - hallucination_detection:
+2026-03-30 21:06:43,703 - checks.obstacle.object_processor_base - INFO -   Total: 0.565s (0.1%)
+2026-03-30 21:06:43,703 - checks.obstacle.object_processor_base - INFO -   Average: 0.019s
+2026-03-30 21:06:43,703 - checks.obstacle.object_processor_base - INFO -   Count: 29
+2026-03-30 21:06:43,703 - checks.obstacle.object_processor_base - INFO -   Range: 0.019s - 0.021s
+2026-03-30 21:06:43,703 - checks.obstacle.object_processor_base - INFO - 
+Total processing time: 1093.125s
+2026-03-30 21:06:43,703 - checks.obstacle.object_processor_base - INFO - ============================================================
+2026-03-30 21:06:43,703 - checks.obstacle.object_processor_base - INFO - Processing complete. Mean correspondence score: nan

@@ -110,6 +110,7 @@ class ObjectProcessorDynamic(ObjectProcessorBase):
         trial_frames: Optional[int],
         results: Dict[str, Any],
         track_output_agg: Dict[int, Dict[str, Any]],
+        ego_reference_poses=None,
     ):
         """Iterate video frames and process each one.
 
@@ -123,6 +124,7 @@ class ObjectProcessorDynamic(ObjectProcessorBase):
             trial_frames (int | None): If set, process at most this many frames.
             results (Dict[str, Any]): Results container to populate.
             track_output_agg (Dict[int, Dict[str, Any]]): Per-track aggregated metadata.
+            ego_reference_poses: Optional ego-aligned poses for importance filtering.
 
         Returns:
             tuple: `(score_matrix, skipped_frames)` where `score_matrix` is np.ndarray and
@@ -152,6 +154,7 @@ class ObjectProcessorDynamic(ObjectProcessorBase):
                 break
 
             camera_pose = camera_poses[mapped_idx]
+            ego_pose = ego_reference_poses.get(mapped_idx) if ego_reference_poses else None
             num_objects = len(data_loader.get_object_data_for_frame(mapped_idx, include_static=False))
             if num_objects == 0:
                 self.logger.debug(f"Skipping frame {frame_idx} - no object data available")
@@ -171,6 +174,7 @@ class ObjectProcessorDynamic(ObjectProcessorBase):
                 track_output_agg,
                 results,
                 video_frame_idx=frame_idx,
+                ego_pose=ego_pose,
             )
             self.profiler.end()
 
@@ -193,6 +197,7 @@ class ObjectProcessorDynamic(ObjectProcessorBase):
         track_output_agg: Dict[int, Dict[str, Any]],
         results: Dict[str, Any],
         video_frame_idx: Optional[int] = None,
+        ego_pose: Optional[np.ndarray] = None,
     ) -> Optional[Dict[int, float]]:
         """Process a single frame: segmentation → scoring → hallucinations → visualization.
 
@@ -205,6 +210,7 @@ class ObjectProcessorDynamic(ObjectProcessorBase):
             track_output_agg (Dict[int, Dict[str, Any]]): Per-track aggregation store (updated in-place).
             results (Dict[str, Any]): Results container for IDs and detections.
             video_frame_idx (int | None): Optional original video index for visualization.
+            ego_pose (np.ndarray | None): Optional ego-aligned pose for importance filtering.
 
         Returns:
             Optional[Dict[int, float]]: Map of `track_id -> score` for the frame, or None if empty.
@@ -263,6 +269,7 @@ class ObjectProcessorDynamic(ObjectProcessorBase):
                 track_output_agg,
                 frame_idx,
                 scene_rasterizer=scene_rasterizer,
+                ego_pose=ego_pose,
             )
 
             scores.update(cls_scores)
@@ -388,6 +395,7 @@ class ObjectProcessorDynamic(ObjectProcessorBase):
         # Initialization
         data_loader = self._init_data_loader(input_data, clip_id)
         camera_poses, camera_model = self._load_camera_data(data_loader, camera_name)
+        ego_reference_poses = self._load_ego_reference_poses(data_loader, camera_name)
         video_dataloader, video_fps, target_fps = self._prepare_video(video_path, data_loader, target_fps)
         self._maybe_init_visualization(video_path, data_loader)
 
@@ -404,6 +412,7 @@ class ObjectProcessorDynamic(ObjectProcessorBase):
             trial_frames,
             results,
             track_output_agg,
+            ego_reference_poses=ego_reference_poses,
         )
 
         # Finalization

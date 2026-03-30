@@ -1,0 +1,387 @@
+{
+  "processed_frames": 29,
+  "total_video_frames": 29,
+  "track_ids": [1001,1002,1003,1004,1005,1006,1007,1008,1009,10010,10011,10012,10013,10014,10015,10016,10017,10018,10019,10020,10021,10022,10023,10024,10025,10026,10027,10028,10029,10030,10031,10032,10033,10034,10035,10036,10037,10038,10039,10040],
+  "processed_frame_ids": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],
+  "hallucination_detections": {
+    "bicycle": [],
+    "motorcycle": [],
+    "pedestrian": [],
+    "vehicle": [
+      {
+        "frame_idx": 11,
+        "bbox_xywh": [1160,385,120,71],
+        "mask_ratio": 0.6145539906103287
+      },
+      {
+        "frame_idx": 12,
+        "bbox_xywh": [1089,384,191,74],
+        "mask_ratio": 0.6559360407527947
+      },
+      {
+        "frame_idx": 13,
+        "bbox_xywh": [1060,386,220,76],
+        "mask_ratio": 0.7330741626794258
+      },
+      {
+        "frame_idx": 14,
+        "bbox_xywh": [1015,389,217,69],
+        "mask_ratio": 0.7159553863621185
+      },
+      {
+        "frame_idx": 15,
+        "bbox_xywh": [973,388,204,68],
+        "mask_ratio": 0.7292387543252595
+      },
+      {
+        "frame_idx": 16,
+        "bbox_xywh": [899,390,242,65],
+        "mask_ratio": 0.6382708200890019
+      },
+      {
+        "frame_idx": 17,
+        "bbox_xywh": [894,391,182,63],
+        "mask_ratio": 0.739141810570382
+      },
+      {
+        "frame_idx": 18,
+        "bbox_xywh": [863,393,171,59],
+        "mask_ratio": 0.7422935870750322
+      },
+      {
+        "frame_idx": 19,
+        "bbox_xywh": [830,392,162,60],
+        "mask_ratio": 0.7445473251028807
+      },
+      {
+        "frame_idx": 20,
+        "bbox_xywh": [757,394,199,55],
+        "mask_ratio": 0.6722704431247145
+      },
+      {
+        "frame_idx": 21,
+        "bbox_xywh": [734,394,186,56],
+        "mask_ratio": 0.6868279569892473
+      },
+      {
+        "frame_idx": 22,
+        "bbox_xywh": [739,395,143,53],
+        "mask_ratio": 0.7597308352025333
+      },
+      {
+        "frame_idx": 23,
+        "bbox_xywh": [698,396,154,52],
+        "mask_ratio": 0.724025974025974
+      }
+    ]
+  },
+  "hallucination_tracks": [
+    {
+      "id": 1,
+      "class": "vehicle",
+      "detections": [0,1,2,3,4,5,6,7,8,9,10,11,12],
+      "relevancy": 13
+    }
+  ],
+  "mean_score": 0.6613881471213262,
+  "std_score": 0.022666592290497955,
+  "min_score": 0.6293474802885566,
+  "max_score": 0.7344968627976222,
+  "processor_output_labels": [
+    "scored",
+    "distance_threshold_m (100m)",
+    "relevant_lanes (['ego', 'left', 'right'])"
+  ],
+  "tracks": [
+    {
+      "track_id": 1005,
+      "object_type": "Car",
+      "processor_output": [29,0,0]
+    },
+    {
+      "track_id": 1007,
+      "object_type": "Car",
+      "processor_output": [0,0,12]
+    },
+    {
+      "track_id": 1008,
+      "object_type": "Car",
+      "processor_output": [0,0,29]
+    },
+    {
+      "track_id": 1009,
+      "object_type": "Car",
+      "processor_output": [0,0,29]
+    },
+    {
+      "track_id": 10010,
+      "object_type": "Cyclist",
+      "processor_output": [0,0,29]
+    },
+    {
+      "track_id": 10011,
+      "object_type": "Car",
+      "processor_output": [0,0,29]
+    },
+    {
+      "track_id": 10012,
+      "object_type": "Car",
+      "processor_output": [0,0,29]
+    },
+    {
+      "track_id": 10013,
+      "object_type": "Car",
+      "processor_output": [0,0,29]
+    },
+    {
+      "track_id": 10014,
+      "object_type": "Car",
+      "processor_output": [0,0,29]
+    },
+    {
+      "track_id": 10015,
+      "object_type": "Cyclist",
+      "processor_output": [0,29,0]
+    },
+    {
+      "track_id": 10016,
+      "object_type": "Car",
+      "processor_output": [0,29,0]
+    },
+    {
+      "track_id": 10021,
+      "object_type": "Car",
+      "processor_output": [0,0,29]
+    },
+    {
+      "track_id": 10022,
+      "object_type": "Cyclist",
+      "processor_output": [0,0,29]
+    },
+    {
+      "track_id": 10023,
+      "object_type": "Car",
+      "processor_output": [0,0,29]
+    },
+    {
+      "track_id": 10024,
+      "object_type": "Cyclist",
+      "processor_output": [0,0,29]
+    },
+    {
+      "track_id": 10025,
+      "object_type": "Car",
+      "processor_output": [0,3,26]
+    },
+    {
+      "track_id": 10026,
+      "object_type": "Car",
+      "processor_output": [0,29,0]
+    },
+    {
+      "track_id": 10031,
+      "object_type": "Car",
+      "processor_output": [0,23,0]
+    },
+    {
+      "track_id": 10032,
+      "object_type": "Car",
+      "processor_output": [0,29,0]
+    },
+    {
+      "track_id": 10033,
+      "object_type": "Car",
+      "processor_output": [0,29,0]
+    },
+    {
+      "track_id": 10034,
+      "object_type": "Car",
+      "processor_output": [0,29,0]
+    },
+    {
+      "track_id": 10035,
+      "object_type": "Car",
+      "processor_output": [0,29,0]
+    },
+    {
+      "track_id": 10036,
+      "object_type": "Car",
+      "processor_output": [0,29,0]
+    },
+    {
+      "track_id": 10037,
+      "object_type": "Car",
+      "processor_output": [0,29,0]
+    },
+    {
+      "track_id": 10038,
+      "object_type": "Car",
+      "processor_output": [0,29,0]
+    },
+    {
+      "track_id": 10039,
+      "object_type": "Car",
+      "processor_output": [0,29,0]
+    },
+    {
+      "track_id": 10040,
+      "object_type": "Cyclist",
+      "processor_output": [0,29,0]
+    }
+  ],
+  "score_matrix": {
+    "format": "sparse",
+    "shape": [29,40],
+    "data": [
+      {
+        "frame_idx": 0,
+        "track_idx": 4,
+        "score": 0.7344968627976222
+      },
+      {
+        "frame_idx": 1,
+        "track_idx": 4,
+        "score": 0.7055834558424516
+      },
+      {
+        "frame_idx": 2,
+        "track_idx": 4,
+        "score": 0.6964306110793832
+      },
+      {
+        "frame_idx": 3,
+        "track_idx": 4,
+        "score": 0.6861398748546431
+      },
+      {
+        "frame_idx": 4,
+        "track_idx": 4,
+        "score": 0.6732149127150613
+      },
+      {
+        "frame_idx": 5,
+        "track_idx": 4,
+        "score": 0.6583245056497176
+      },
+      {
+        "frame_idx": 6,
+        "track_idx": 4,
+        "score": 0.6494276351815313
+      },
+      {
+        "frame_idx": 7,
+        "track_idx": 4,
+        "score": 0.6407578940119142
+      },
+      {
+        "frame_idx": 8,
+        "track_idx": 4,
+        "score": 0.6360174893686201
+      },
+      {
+        "frame_idx": 9,
+        "track_idx": 4,
+        "score": 0.63320774105155
+      },
+      {
+        "frame_idx": 10,
+        "track_idx": 4,
+        "score": 0.6293474802885566
+      },
+      {
+        "frame_idx": 11,
+        "track_idx": 4,
+        "score": 0.6353493222106361
+      },
+      {
+        "frame_idx": 12,
+        "track_idx": 4,
+        "score": 0.6402095866485542
+      },
+      {
+        "frame_idx": 13,
+        "track_idx": 4,
+        "score": 0.6431903026830557
+      },
+      {
+        "frame_idx": 14,
+        "track_idx": 4,
+        "score": 0.6498750397600763
+      },
+      {
+        "frame_idx": 15,
+        "track_idx": 4,
+        "score": 0.6496975945649872
+      },
+      {
+        "frame_idx": 16,
+        "track_idx": 4,
+        "score": 0.6534869414462279
+      },
+      {
+        "frame_idx": 17,
+        "track_idx": 4,
+        "score": 0.6517411527176323
+      },
+      {
+        "frame_idx": 18,
+        "track_idx": 4,
+        "score": 0.6524572905201703
+      },
+      {
+        "frame_idx": 19,
+        "track_idx": 4,
+        "score": 0.6548936832480594
+      },
+      {
+        "frame_idx": 20,
+        "track_idx": 4,
+        "score": 0.6569060883011836
+      },
+      {
+        "frame_idx": 21,
+        "track_idx": 4,
+        "score": 0.6610561622937735
+      },
+      {
+        "frame_idx": 22,
+        "track_idx": 4,
+        "score": 0.6643165794860132
+      },
+      {
+        "frame_idx": 23,
+        "track_idx": 4,
+        "score": 0.6666490402411295
+      },
+      {
+        "frame_idx": 24,
+        "track_idx": 4,
+        "score": 0.6697464593228794
+      },
+      {
+        "frame_idx": 25,
+        "track_idx": 4,
+        "score": 0.6716952499972105
+      },
+      {
+        "frame_idx": 26,
+        "track_idx": 4,
+        "score": 0.6706395682627168
+      },
+      {
+        "frame_idx": 27,
+        "track_idx": 4,
+        "score": 0.6725818871053723
+      },
+      {
+        "frame_idx": 28,
+        "track_idx": 4,
+        "score": 0.6728158548677333
+      }
+    ]
+  },
+  "metadata": {
+    "matrix_format": "sparse",
+    "version": "1.0"
+  }
+}

@@ -77,6 +77,7 @@ class OverlapDetector:
         track_output_agg: Dict[int, Dict[str, Any]],
         frame_idx: int,
         scene_rasterizer: Optional[SceneRasterizer] = None,
+        ego_pose: Optional[np.ndarray] = None,
     ) -> Tuple[Dict[int, float], Dict[int, Dict[str, Any]], Optional[Dict[str, Any]]]:
         """Process a single class for one frame: filter, score, and (optionally) debug.
 
@@ -100,6 +101,7 @@ class OverlapDetector:
             scene_rasterizer: Optional pre-computed SceneRasterizer with visibility masks.
                               If provided, uses cached masks for efficient O(1) lookup.
                               If None, computes masks directly.
+            ego_pose: Optional ego-aligned reference pose for importance filtering.
 
         Returns:
             scores: track_id → score
@@ -152,7 +154,7 @@ class OverlapDetector:
 
             # Importance filter
             importance_result, filter_reason = self.importance_filter.should_process_object(
-                tracked_object, camera_pose, track_id
+                tracked_object, camera_pose, track_id, ego_pose=ego_pose
             )
             if not importance_result:
                 filtered_objects[track_id] = {"reason": filter_reason, "type": "importance"}

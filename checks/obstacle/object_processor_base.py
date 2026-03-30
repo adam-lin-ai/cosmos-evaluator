@@ -59,6 +59,8 @@ class ObjectProcessorBase:
         "wait_line",
     ]
 
+    EGO_REFERENCE_CAMERA: str = "front_center"
+
     def __init__(
         self,
         clip_id: str,
@@ -197,6 +199,38 @@ class ObjectProcessorBase:
         camera_model = data_loader.get_camera_intrinsics(camera_name, "ftheta")
         self.profiler.end()
         return camera_poses, camera_model
+
+    def _load_ego_reference_poses(self, data_loader: RdsDataLoader, camera_name: str):
+        """Load ego-aligned reference poses for importance filtering.
+
+        For non-forward-facing cameras (e.g. front_left, rear_right), the camera
+        coordinate frame is rotated relative to the ego vehicle.  Lane assignment
+        and oncoming detection require an ego-aligned frame, so we load the
+        front_center camera poses as a proxy when the evaluation camera differs.
+
+        Args:
+            data_loader: Loader providing pose streams.
+            camera_name: The camera currently being evaluated.
+
+        Returns:
+            dict | None: Mapping from frame index to 4x4 ego-reference poses,
+            or None when the evaluation camera is already the reference camera.
+        """
+        if camera_name == self.EGO_REFERENCE_CAMERA:
+            return None
+        try:
+            ego_poses = data_loader.get_camera_poses(self.EGO_REFERENCE_CAMERA)
+            self.logger.info(
+                f"Loaded {len(ego_poses)} ego-reference poses from '{self.EGO_REFERENCE_CAMERA}' "
+                f"for importance filtering (evaluation camera: '{camera_name}')"
+            )
+            return ego_poses
+        except Exception as e:
+            self.logger.warning(
+                f"Could not load ego-reference poses from '{self.EGO_REFERENCE_CAMERA}': {e}. "
+                f"Falling back to camera poses for importance filtering."
+            )
+            return None
 
     def _prepare_video(self, video_path: str, data_loader: RdsDataLoader, target_fps: Optional[float]):
         """Prepare the video dataloader and derive effective FPS used for frame mapping.
