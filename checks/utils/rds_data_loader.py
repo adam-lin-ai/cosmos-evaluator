@@ -164,6 +164,14 @@ class RdsDataLoader:
 
         if model_type == "ftheta":
             try:
+                if intrinsic_this_cam.ndim == 1 and intrinsic_this_cam.shape[0] == 10:
+                    # RDS format: [poly(6), cx, cy, width, height]
+                    # from_numpy expects: [cx, cy, width, height, poly(6), is_bw_poly, ...]
+                    intrinsic_this_cam = np.concatenate([
+                        intrinsic_this_cam[6:10],   # cx, cy, width, height
+                        intrinsic_this_cam[0:6],    # poly coefficients
+                        np.array([1.0]),             # is_bw_poly=True
+                    ])
                 camera_model = FThetaCamera.from_numpy(intrinsic_this_cam, device="cpu")
                 if rescaled:
                     rescale_ratio = self.CAMERA_RESCALED_RESOLUTION_HEIGHT / camera_model.height

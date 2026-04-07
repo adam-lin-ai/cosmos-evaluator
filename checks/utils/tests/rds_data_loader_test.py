@@ -90,8 +90,12 @@ class TestRdsDataLoader(unittest.TestCase):
         """Create mock intrinsics data for testing."""
         if model_type == "pinhole":
             intrinsic = np.array([[800.0, 0.0, 640.0], [0.0, 800.0, 360.0], [0.0, 0.0, 1.0]])
-        else:  # ftheta
-            intrinsic = np.random.rand(10, 10)  # Mock ftheta intrinsics
+        else:  # ftheta — RDS format: [poly(6), cx, cy, width, height]
+            intrinsic = np.array([
+                0.0, 1.62414438e-03, 6.27473968e-08, -1.96245101e-09,
+                1.91854003e-12, -6.25425416e-16,
+                640.0, 360.0, 1280.0, 720.0,
+            ])
         return {f"{model_type}_intrinsic.{camera_name}.npy": intrinsic}
 
     def _create_mock_label_data(self) -> dict:
@@ -279,7 +283,11 @@ class TestRdsDataLoader(unittest.TestCase):
     @patch.object(RdsDataLoader, "_get_camera_intrinsics_array")
     def test_get_camera_intrinsics_ftheta(self, mock_get_array, mock_ftheta_camera):
         """Test get_camera_intrinsics for ftheta model."""
-        mock_intrinsic = np.random.rand(10, 10)
+        mock_intrinsic = np.array([
+            0.0, 1.62414438e-03, 6.27473968e-08, -1.96245101e-09,
+            1.91854003e-12, -6.25425416e-16,
+            640.0, 360.0, 1280.0, 720.0,
+        ])
         mock_get_array.return_value = mock_intrinsic
 
         mock_camera_instance = Mock()
@@ -292,14 +300,22 @@ class TestRdsDataLoader(unittest.TestCase):
         result = loader.get_camera_intrinsics("camera_front", "ftheta", rescaled=True)
 
         self.assertEqual(result, mock_camera_instance)
-        mock_ftheta_camera.from_numpy.assert_called_once_with(mock_intrinsic, device="cpu")
+        call_args = mock_ftheta_camera.from_numpy.call_args
+        reordered = call_args[0][0]
+        np.testing.assert_array_almost_equal(reordered[:4], [640.0, 360.0, 1280.0, 720.0])
+        np.testing.assert_array_almost_equal(reordered[4:10], mock_intrinsic[:6])
+        self.assertEqual(reordered[10], 1.0)
         mock_camera_instance.rescale.assert_called_once()
 
     @patch("checks.utils.rds_data_loader.FThetaCamera")
     @patch.object(RdsDataLoader, "_get_camera_intrinsics_array")
     def test_get_camera_intrinsics_ftheta_not_rescaled(self, mock_get_array, mock_ftheta_camera):
         """Test get_camera_intrinsics for ftheta model without rescaling."""
-        mock_intrinsic = np.random.rand(10, 10)
+        mock_intrinsic = np.array([
+            0.0, 1.62414438e-03, 6.27473968e-08, -1.96245101e-09,
+            1.91854003e-12, -6.25425416e-16,
+            640.0, 360.0, 1280.0, 720.0,
+        ])
         mock_get_array.return_value = mock_intrinsic
 
         mock_camera_instance = Mock()
@@ -328,7 +344,11 @@ class TestRdsDataLoader(unittest.TestCase):
     @patch.object(RdsDataLoader, "_get_camera_intrinsics_array")
     def test_get_camera_intrinsics_ftheta_runtime_error(self, mock_get_array, mock_ftheta_camera):
         """Test get_camera_intrinsics raises RuntimeError when camera creation fails."""
-        mock_intrinsic = np.random.rand(10, 10)
+        mock_intrinsic = np.array([
+            0.0, 1.62414438e-03, 6.27473968e-08, -1.96245101e-09,
+            1.91854003e-12, -6.25425416e-16,
+            640.0, 360.0, 1280.0, 720.0,
+        ])
         mock_get_array.return_value = mock_intrinsic
 
         mock_ftheta_camera.from_numpy.side_effect = Exception("Camera creation failed")
