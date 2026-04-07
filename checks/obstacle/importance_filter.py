@@ -47,7 +47,11 @@ class ImportanceFilter:
         self.logger = logger
 
     def should_process_object(
-        self, tracked_object: Dict[str, Any], camera_pose: np.ndarray, track_id: int
+        self,
+        tracked_object: Dict[str, Any],
+        camera_pose: np.ndarray,
+        track_id: int,
+        ego_pose: np.ndarray | None = None,
     ) -> tuple[bool, str]:
         """
         Determine if an object should be processed based on importance filters.
@@ -56,10 +60,15 @@ class ImportanceFilter:
             tracked_object: Object data from world model
             camera_pose: Camera pose for this frame
             track_id: Track ID of the object (used for logging)
+            ego_pose: Optional ego-aligned reference pose (e.g. front_center camera-to-world).
+                When provided, distance/lane/oncoming checks use this frame instead of the
+                camera frame so that results are consistent regardless of which camera is
+                being evaluated.
 
         Returns:
             Tuple of (should_process, reason). If should_process is False, reason contains the filter reason.
         """
+        reference_pose = ego_pose if ego_pose is not None else camera_pose
 
         # pass static objects through if configured to do so
         if tracked_object.get("is_static", True) and self.config.get("allow_all_static_objects", True):
@@ -76,7 +85,7 @@ class ImportanceFilter:
             return False, "no_centroid"
 
         # the object is not within distance threshold
-        if not self._is_within_distance(tracked_object, camera_pose, track_id):
+        if not self._is_within_distance(tracked_object, reference_pose, track_id):
             distance_threshold = self.config.get("distance_threshold_m", float("inf"))
             reason = f"distance_threshold_m ({distance_threshold}m)"
             if self.logger:
@@ -85,7 +94,7 @@ class ImportanceFilter:
 
         # skip oncoming obstacles if configured to do so AND the object is oncoming
         if self.config.get("skip_oncoming_obstacles", True) and self._is_oncoming(
-            tracked_object, camera_pose, track_id
+            tracked_object, reference_pose, track_id
         ):
             reason = "skip_oncoming_obstacles (enabled)"
             if self.logger:
@@ -93,7 +102,7 @@ class ImportanceFilter:
             return False, reason
 
         # the object is not in relevant lanes
-        if not self._is_in_relevant_lanes(tracked_object, camera_pose, track_id):
+        if not self._is_in_relevant_lanes(tracked_object, reference_pose, track_id):
             relevant_lanes = self.config.get("relevant_lanes", [])
             reason = f"relevant_lanes ({relevant_lanes})"
             if self.logger:
